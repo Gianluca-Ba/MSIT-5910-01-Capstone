@@ -1,0 +1,36 @@
+flowchart LR
+    Client[Authorized test client]
+    Operator[Authorized recovery operator]
+    subgraph ERP[ERP service process]
+        API[Submission and status API]
+        Worker[Outbox delivery worker]
+        Recovery[Recovery authorization and audit]
+    end
+    subgraph EDB[ERP SQL database]
+        Orders[(Source orders)]
+        Outbox[(Outbox and attempt history)]
+    end
+    subgraph WMS[WMS service process]
+        Auth[Authentication and source authorization]
+        Accept[Validation and idempotent acceptance]
+    end
+    subgraph WDB[WMS SQL database]
+        Receipt[(Acceptance receipt)]
+        Work[(Accepted warehouse orders)]
+    end
+    Client -->|Create order / query status| API
+    API -->|One local transaction| Orders
+    API -->|Same local transaction| Outbox
+    Outbox -->|Read due records| Worker
+    Worker -->|HTTP POST with stable identity| Auth
+    Auth --> Accept
+    Accept -->|One local transaction| Receipt
+    Accept -->|Same local transaction| Work
+    Accept -->|Stored acceptance outcome| Worker
+    Worker -->|Persist outcome and attempt| Outbox
+    Operator --> Recovery
+    Recovery -->|Requeue original identity / preserve history| Outbox
+    Runner[Isolated fault runner and independent assertions]
+    Runner -.->|Submit synthetic orders / inject faults| Client
+    Runner -.->|Inspect test state only| EDB
+    Runner -.->|Inspect test state only| WDB
