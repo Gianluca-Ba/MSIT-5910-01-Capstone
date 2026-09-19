@@ -1,0 +1,17 @@
+.vs/
+**/bin/
+**/obj/
+TestResults/
+.env
+.env.*
+!.env.example
+*.user
+*.suo
+*.pfx
+*.key
+**/appsettings.Local.json
+artifacts/
+~$*
+
+# Local coursework preparation notes
+docs/unit3-preparation.md
