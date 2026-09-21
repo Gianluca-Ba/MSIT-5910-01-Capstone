@@ -3,13 +3,13 @@ sequenceDiagram
     participant A as WMS acceptance API
     participant D as WMS database
     W->>A: Submit authenticated source, stable ID, payload
-    A->>D: Begin transaction; insert receipt and accepted order
+    A->>D: Begin transaction, insert receipt and accepted order
     D-->>A: Commit both records
     A--xW: Acceptance response lost
     Note over W: Timeout means outcome unknown, not rejection
     W->>W: Persist retry schedule and attempt history
     W->>A: Resend same identity and content
-    A->>D: Find existing receipt; compare canonical content
+    A->>D: Find existing receipt, compare canonical content
     D-->>A: Original accepted outcome
     A-->>W: Return original outcome without second order
     W->>W: Mark delivery acknowledged
