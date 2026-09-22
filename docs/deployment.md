@@ -27,6 +27,7 @@ dotnet test -c Release --no-build --logger trx --results-directory artifacts/tes
 ./scripts/Start-Demo.ps1 -NoBuild
 ./scripts/Invoke-Demo.ps1
 ./scripts/Test-Demo.ps1
+./scripts/Test-DeliveryFailure.ps1
 ./scripts/Stop-Demo.ps1
 ```
 
@@ -43,3 +44,5 @@ For manual artifact deployment, install the corresponding .NET 10 ASP.NET Core r
 Run one ERP worker. It makes one bounded attempt for each pending message, persists a terminal local outcome, and marks uncertain delivery `RecoveryRequired`. A process crash before outcome persistence leaves the record pending for safe redelivery. Automatic scheduled retries, audited manual requeue, lost-acknowledgement experiments, baseline comparison, and throughput claims belong to subsequent milestones. A failed HTTP call is never treated as proof that the warehouse did not commit.
 
 SQL integration checks run separately from GitHub's unit tests. Synthetic requests drive real code and SQL transactions; they are not a machinery simulator. Test data and receipts remain for inspection.
+
+The optional failure test stops only the recorded WMS demo process, confirms an uncertain delivery is RecoveryRequired, then restarts both services and checks the persisted status. It intentionally retains the failed order. See `unit4-verification.md` for observed results.

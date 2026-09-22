@@ -9,13 +9,13 @@ function New-Key {
     try{$rng.GetBytes($bytes);return [Convert]::ToBase64String($bytes)}finally{$rng.Dispose()}
 }
 $builder=New-Object System.Data.SqlClient.SqlConnectionStringBuilder
-$builder.DataSource=$Server
-$builder.InitialCatalog='master'
-$builder.UserID=$AdminCredential.UserName
-$builder.Password=$AdminCredential.GetNetworkCredential().Password
-$builder.Encrypt=$true
-$builder.TrustServerCertificate=$true
-$builder.ConnectTimeout=10
+$builder['Data Source']=$Server
+$builder['Initial Catalog']='master'
+$builder['User ID']=$AdminCredential.UserName
+$builder['Password']=$AdminCredential.GetNetworkCredential().Password
+$builder['Encrypt']=$true
+$builder['TrustServerCertificate']=$true
+$builder['Connect Timeout']=10
 $c=New-Object System.Data.SqlClient.SqlConnection($builder.ConnectionString)
 $c.Open()
 try {
@@ -41,7 +41,7 @@ try {
         foreach($table in $tables){$cmd.CommandText="GRANT SELECT,INSERT ON dbo.[$table] TO [$login]";$cmd.ExecuteNonQuery()|Out-Null}
         if($role -eq 'Erp'){$cmd.CommandText="GRANT UPDATE ON dbo.OutboxMessage TO [$login]";$cmd.ExecuteNonQuery()|Out-Null}
         $appBuilder=New-Object System.Data.SqlClient.SqlConnectionStringBuilder($builder.ConnectionString)
-        $appBuilder.InitialCatalog=$db;$appBuilder.UserID=$login;$appBuilder.Password=$password
+        $appBuilder['Initial Catalog']=$db;$appBuilder['User ID']=$login;$appBuilder['Password']=$password
         $secrets["${role}Connection"]=ConvertTo-SecureString $appBuilder.ConnectionString -AsPlainText -Force
         $secrets["${role}Key"]=ConvertTo-SecureString (New-Key) -AsPlainText -Force
         $c.ChangeDatabase('master')

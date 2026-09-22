@@ -12,17 +12,18 @@ Prepared September 22, 2026. This is an implementation candidate for review, not
 - Release compilation succeeded with zero warnings/errors. All 28 unit tests passed with zero skipped tests. Unit tests cover validation boundaries, content comparison and acknowledgement classification.
 - Both framework-dependent service packages were produced locally with XML settings included.
 
-## Prepared but awaiting runtime verification
+## Runtime verification completed
 
-- `Initialize-Demo.ps1`: creates only CapstoneErp and CapstoneWms plus their restricted logins after explicit host authorization. It refuses to alter pre-existing same-named databases or logins.
-- `Start-Demo.ps1`, `Stop-Demo.ps1`, `Invoke-Demo.ps1`: start, stop, and demonstrate the actual services.
-- `Test-Demo.ps1`: 25 HTTP/SQL assertions, including ten concurrent receiver requests, one business effect, matching receipts, conflicts, authentication, source isolation and durable outgoing persistence. These checks have not run yet.
-- Remote SQL access was verified separately using a read-only query; connectivity to master does not establish application database readiness.
+- `Initialize-Demo.ps1`: successfully created CapstoneErp and CapstoneWms plus their restricted logins after explicit host authorization. Existing same-named objects are protected by refusal checks.
+- `Start-Demo.ps1`, `Stop-Demo.ps1`, `Invoke-Demo.ps1`: startup, stop, restart and the complete order/duplicate/conflict demonstration passed.
+- `Test-Demo.ps1`: all 25 HTTP/SQL assertions passed, including ten concurrent receiver requests, one business effect, matching receipts, conflicts, authentication, source isolation and durable outgoing persistence.
+- `Test-DeliveryFailure.ps1`: a real stopped WMS process produced RecoveryRequired with no receipt; the state persisted after restarting both services.
+- Both application accounts were verified to lack sysadmin, database CONTROL, other-capstone-database access and order DELETE permissions. See `unit4-verification.md`.
 - Hosted [workflow run 35679108009](https://github.com/Gianluca-Ba/MSIT-5910-01-Capstone/actions/runs/35679108009) completed successfully for implementation commit `87dc25d`. It restored locked dependencies, built, ran unit tests, and uploaded service packages plus test results. This validates hosted CI and packaging, not LAN database integration.
 
 ## Design decisions and next work
 
-The Unit 3 target architecture originally described handling unique-key races by catching insert conflicts. This implementation takes serializable update/range locks before inserting while retaining the unique database key. The purpose is the same: serialize decisions for one identity and preserve exactly one committed order. The prepared concurrent-request test must verify this against SQL Server.
+The Unit 3 target architecture originally described handling unique-key races by catching insert conflicts. This implementation takes serializable update/range locks before inserting while retaining the unique database key. The purpose is the same: serialize decisions for one identity and preserve exactly one committed order. The ten-request concurrent integration check verified this for the tested SQL Server workload.
 
 Full rollback fault injection, durable retry schedules, authenticated manual recovery, lost-acknowledgement trials, baseline comparison and performance measurement remain later work. The unit test suite does not establish these properties.
 
