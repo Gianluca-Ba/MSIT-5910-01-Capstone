@@ -11,6 +11,8 @@ TestResults/
 *.key
 **/appsettings.Local.json
 artifacts/
+.local/
+**/*.local.xml
 ~$*
 
 # Local coursework preparation notes

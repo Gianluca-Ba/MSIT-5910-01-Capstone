@@ -1,6 +1,6 @@
 # Proposed system requirements and design
 
-Status: Unit 3 engineering working specification. The design is proposed; no executable implementation or measured performance is claimed.
+Status: Unit 3 target specification, retained for traceability. Unit 4 now implements the initial subset described in `unit4-status.md`. Scheduled retries, manual recovery, fault experiments, and performance targets below remain future work.
 
 ## Design decisions
 

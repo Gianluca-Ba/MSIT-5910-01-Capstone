@@ -1,0 +1,35 @@
+name: Build test and package
+on:
+  push:
+    branches: [main, development, 'feature/**']
+  pull_request:
+    branches: [main, development]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet restore --locked-mode
+      - run: dotnet build --no-restore --configuration Release
+      - run: dotnet test --no-build --configuration Release --logger trx --results-directory artifacts/tests
+      - run: dotnet publish src/Capstone.Erp -c Release --no-build -o artifacts/package/erp
+      - run: dotnet publish src/Capstone.Wms -c Release --no-build -o artifacts/package/wms
+      - run: |
+          cp -r database artifacts/package/
+          cp docs/deployment.md artifacts/package/DEPLOYMENT.md
+          echo "$GITHUB_SHA" > artifacts/package/REVISION.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: services-${{ github.sha }}
+          path: artifacts/package
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unit-test-results
+          path: artifacts/tests

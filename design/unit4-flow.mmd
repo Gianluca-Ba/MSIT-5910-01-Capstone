@@ -1,0 +1,9 @@
+flowchart LR
+    Client[API caller] -->|Authenticated order| ERP[ERP API]
+    ERP -->|One SQL transaction| ED[(SourceOrder and OutboxMessage)]
+    ED --> Worker[Single delivery worker]
+    Worker -->|HTTP outside SQL transaction| WMS[WMS API]
+    WMS -->|One SQL transaction| WD[(AcceptedOrder and AcceptanceReceipt)]
+    WD -->|Original receipt for duplicates| WMS
+    WMS -->|Acceptance receipt| Worker
+    Worker -->|Persist outcome and attempt| ED
