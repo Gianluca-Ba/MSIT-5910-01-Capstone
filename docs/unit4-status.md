@@ -18,7 +18,7 @@ Prepared September 22, 2026. This is an implementation candidate for review, not
 - `Start-Demo.ps1`, `Stop-Demo.ps1`, `Invoke-Demo.ps1`: start, stop, and demonstrate the actual services.
 - `Test-Demo.ps1`: 25 HTTP/SQL assertions, including ten concurrent receiver requests, one business effect, matching receipts, conflicts, authentication, source isolation and durable outgoing persistence. These checks have not run yet.
 - Remote SQL access was verified separately using a read-only query; connectivity to master does not establish application database readiness.
-- The hosted CI workflow is prepared; a successful remote run must be inspected before reporting hosted CI success.
+- Hosted [workflow run 35679108009](https://github.com/Gianluca-Ba/MSIT-5910-01-Capstone/actions/runs/35679108009) completed successfully for implementation commit `87dc25d`. It restored locked dependencies, built, ran unit tests, and uploaded service packages plus test results. This validates hosted CI and packaging, not LAN database integration.
 
 ## Design decisions and next work
 
