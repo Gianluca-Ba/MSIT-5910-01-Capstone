@@ -3,6 +3,11 @@ var builder = WebApplication.CreateBuilder(args);
 ServiceSetup.Configure(builder);
 var app = builder.Build();
 ServiceSetup.Secure(app);
+app.MapGet("/api/acceptances/{id:guid}", async (Guid id, HttpContext context, SqlStore store, CancellationToken ct) =>
+{
+    var evidence = await store.GetAcceptance(ServiceSetup.Source(context), id, ct);
+    return evidence is null ? Results.NotFound() : Results.Ok(evidence);
+});
 app.MapPost("/api/acceptances", async (OrderRequest order, HttpContext context, SqlStore store, CancellationToken ct) =>
 {
     var error = OrderRules.Validate(order);

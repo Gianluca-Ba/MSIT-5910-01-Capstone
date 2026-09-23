@@ -17,6 +17,10 @@ Start with [setup and deployment](docs/deployment.md), then the [API walkthrough
 - `docs/`: coursework preparation and engineering specifications.
 - `design/`: architecture and sequence diagram sources.
 
-The scope is order creation and acceptance. It excludes production SAP access, machinery simulation, robot dispatch, PLC controls, and a graphical administration interface. Only original synthetic test records will be used.
+The scope is order creation and acceptance, with a local verification dashboard for input, delivery status, duplicate/conflict checks, and SQL-backed warehouse evidence. It excludes production SAP access, machinery simulation, robot dispatch, PLC controls, and a full administration interface. Only original synthetic test records will be used.
+
+With the demo services running, run `./scripts/Open-Dashboard.ps1`, paste the copied ERP API key, and click **Connect**. See [dashboard walkthrough](docs/dashboard.md). The page is served by ERP at `http://127.0.0.1:5080/`; no separate frontend package installation is needed.
+
+The [automatic message lab](docs/automatic-sender.md) adds 1,000 SQL-backed templates, configurable seeded batches, Arm/Run/Stop controls, a live result map, and durable payload/timestamp/outcome records. Existing databases need the additive `scripts/Update-AutomationDatabase.ps1` migration before using it.
 
 Unit 4 makes one bounded delivery attempt per pending record. Uncertain outcomes become `RecoveryRequired`; scheduled retries and audited recovery are Unit 5 work. Both HTTP APIs are loopback-only; SQL credentials and API keys stay in private local configuration.

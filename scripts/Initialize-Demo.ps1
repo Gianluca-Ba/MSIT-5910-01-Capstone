@@ -40,6 +40,7 @@ try {
         $tables=if($role -eq 'Erp'){@('SourceOrder','OutboxMessage','DeliveryAttempt')}else{@('AcceptedOrder','AcceptanceReceipt')}
         foreach($table in $tables){$cmd.CommandText="GRANT SELECT,INSERT ON dbo.[$table] TO [$login]";$cmd.ExecuteNonQuery()|Out-Null}
         if($role -eq 'Erp'){$cmd.CommandText="GRANT UPDATE ON dbo.OutboxMessage TO [$login]";$cmd.ExecuteNonQuery()|Out-Null}
+        if($role -eq 'Erp'){$cmd.CommandText=Get-Content "$repo/database/erp-automation.sql" -Raw;$cmd.ExecuteNonQuery()|Out-Null}
         $appBuilder=New-Object System.Data.SqlClient.SqlConnectionStringBuilder($builder.ConnectionString)
         $appBuilder['Initial Catalog']=$db;$appBuilder['User ID']=$login;$appBuilder['Password']=$password
         $secrets["${role}Connection"]=ConvertTo-SecureString $appBuilder.ConnectionString -AsPlainText -Force

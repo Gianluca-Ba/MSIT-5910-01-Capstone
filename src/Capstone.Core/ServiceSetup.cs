@@ -18,7 +18,7 @@ public static class ServiceSetup
         builder.Services.ConfigureHttpJsonOptions(o => o.SerializerOptions.UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow);
         builder.Services.AddSingleton(new SqlStore(builder.Configuration.GetConnectionString("Database") ?? throw new InvalidOperationException("Configure ConnectionStrings__Database outside Git.")));
     }
-    public static void Secure(WebApplication app)
+    public static void Secure(WebApplication app, bool dashboard = false)
     {
         var clients = app.Configuration.GetSection("Auth:Clients").GetChildren().ToDictionary(x => x.Key, x => x.Value ?? "");
         if (clients.Count == 0 || clients.Any(x => x.Key.Length > 64 || x.Value.Length < 32) || clients.Values.Distinct(StringComparer.Ordinal).Count() != clients.Count)
@@ -27,7 +27,12 @@ public static class ServiceSetup
         {
             // Unit 4 HTTP services accept loopback only. Network deployment requires HTTPS.
             if (context.Connection.RemoteIpAddress is not { } ip || !IPAddress.IsLoopback(ip)) { context.Response.StatusCode = 403; return; }
-            if (context.Request.Path == "/health") { await next(); return; }
+            context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+            context.Response.Headers["Referrer-Policy"] = "no-referrer";
+            context.Response.Headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
+            context.Response.Headers.CacheControl = "no-store";
+            var path = context.Request.Path.Value;
+            if (path == "/health" || (dashboard && (HttpMethods.IsGet(context.Request.Method) || HttpMethods.IsHead(context.Request.Method)) && path is "/" or "/index.html" or "/dashboard.css" or "/dashboard.js")) { await next(); return; }
             var supplied = context.Request.Headers["X-Api-Key"].ToString();
             var match = clients.FirstOrDefault(x => CryptographicOperations.FixedTimeEquals(SHA256.HashData(Encoding.UTF8.GetBytes(x.Value)), SHA256.HashData(Encoding.UTF8.GetBytes(supplied))));
             if (match.Key is null) { context.Response.StatusCode = 401; return; }

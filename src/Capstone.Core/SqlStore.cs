@@ -84,6 +84,22 @@ public sealed class SqlStore(string connectionString)
         await cmd.ExecuteNonQueryAsync(ct);
         await tx.CommitAsync(ct);
     }
+    public async Task<AcceptanceEvidence?> GetAcceptance(string source, Guid id, CancellationToken ct)
+    {
+        await using var c = await Open(ct);
+        await using var cmd = Command(c, null, """
+            SELECT o.Payload,r.Receipt,
+              (SELECT COUNT(*) FROM dbo.AcceptedOrder WHERE SourceId=@source AND OrderId=@id),
+              (SELECT COUNT(*) FROM dbo.AcceptanceReceipt WHERE SourceId=@source AND OrderId=@id)
+            FROM dbo.AcceptedOrder o JOIN dbo.AcceptanceReceipt r
+              ON r.SourceId=o.SourceId AND r.OrderId=o.OrderId
+            WHERE o.SourceId=@source AND o.OrderId=@id
+            """, source, id);
+        await using var r = await cmd.ExecuteReaderAsync(ct);
+        if (!await r.ReadAsync(ct)) return null;
+        return new(JsonSerializer.Deserialize<OrderRequest>(r.GetString(0), Json)!,
+            JsonSerializer.Deserialize<Receipt>(r.GetString(1), Json)!, r.GetInt32(2), r.GetInt32(3));
+    }
     public async Task<Acceptance> Accept(string source, OrderRequest order, CancellationToken ct)
     {
         await using var c = await Open(ct);

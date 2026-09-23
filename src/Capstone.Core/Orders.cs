@@ -5,6 +5,7 @@ public sealed record OrderRequest(int Version, Guid OrderId, string? Sku, int Qu
 public sealed record Receipt(string SourceId, Guid OrderId, Guid ReceiptId, DateTimeOffset AcceptedAt);
 public sealed record OrderStatus(string SourceId, OrderRequest Order, string Status, Receipt? Receipt);
 public sealed record Acceptance(Receipt Receipt, bool Duplicate);
+public sealed record AcceptanceEvidence(OrderRequest Order, Receipt Receipt, int OrderCount, int ReceiptCount);
 public sealed class OrderConflictException : Exception;
 public static partial class OrderRules
 {
