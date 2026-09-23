@@ -23,4 +23,6 @@ With the demo services running, run `./scripts/Open-Dashboard.ps1`, paste the co
 
 The [automatic message lab](docs/automatic-sender.md) adds 1,000 SQL-backed templates, configurable seeded batches, Arm/Run/Stop controls, a live result map, and durable payload/timestamp/outcome records. Existing databases need the additive `scripts/Update-AutomationDatabase.ps1` migration before using it.
 
+The [message designer](docs/message-customization.md) adds multiple versioned message types, named sections, field rules, seeded data generation and SQL-persisted validation evidence. This first milestone validates custom messages in ERP; it does not dispatch them to WMS. Existing databases need `scripts/Update-CustomizationDatabase.ps1`.
+
 Unit 4 makes one bounded delivery attempt per pending record. Uncertain outcomes become `RecoveryRequired`; scheduled retries and audited recovery are Unit 5 work. Both HTTP APIs are loopback-only; SQL credentials and API keys stay in private local configuration.

@@ -2,6 +2,7 @@ using Capstone.Core;
 using Capstone.Erp;
 var builder = WebApplication.CreateBuilder(args);
 ServiceSetup.Configure(builder);
+builder.Services.AddSingleton<CustomizationStore>();
 builder.Services.AddHttpClient("wms", client =>
 {
     var target = new Uri(builder.Configuration["Delivery:WmsUrl"]!);
@@ -15,9 +16,17 @@ builder.Services.AddHttpClient("auto-erp", client => { var url = new Uri(builder
 builder.Services.AddHostedService<AutoSender>();
 var app = builder.Build();
 ServiceSetup.Secure(app, dashboard: true);
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path.StartsWithSegments("/api/message-types") &&
+        context.Features.Get<Microsoft.AspNetCore.Http.Features.IHttpMaxRequestBodySizeFeature>() is { IsReadOnly: false } limit)
+        limit.MaxRequestBodySize = 65536;
+    await next();
+});
 app.UseDefaultFiles();
 app.UseStaticFiles();
 DashboardEndpoints.Map(app);
+CustomizationEndpoints.Map(app);
 app.MapPost("/api/automation/arm", async (RunOptions options,HttpContext context,AutomationStore store,CancellationToken ct) =>
     !AutomationPlan.Valid(options) ? Results.BadRequest(new {error="Use 10–1000 messages, 0–80% errors and a 100–5000 ms interval."}) : Results.Ok(new {runId=await store.Arm(ServiceSetup.Source(context),options,ct)}));
 app.MapGet("/api/automation",async(HttpContext context,AutomationStore store,CancellationToken ct)=>Results.Content(await store.Read(ServiceSetup.Source(context),null,null,ct) ?? "[]","application/json"));

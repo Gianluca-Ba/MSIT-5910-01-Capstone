@@ -227,3 +227,69 @@ $('auto-stop').addEventListener('click',()=>autoAction(async()=>{await autoReque
 $('auto-history').addEventListener('click',()=>autoAction(async()=>{const runs=await autoRequest('GET','/api/automation');$('auto-runs').replaceChildren(new Option('Select a recorded run',''));for(const r of runs)$('auto-runs').append(new Option(`${r.createdAt} UTC · ${r.messageCount} · ${r.state}`,r.runId));$('auto-notice').textContent=`${runs.length} recent runs loaded.`;}));
 $('auto-runs').addEventListener('change',()=>{if(!$('auto-runs').value)return;autoId=$('auto-runs').value;autoSnapshot=null;$('message-map').replaceChildren();autoLoad();});
 setInterval(()=>{autoControls();if(key&&autoId&&!autoBusy)autoLoad();},2000);autoControls();
+
+// Custom types are evaluated in ERP; they do not dispatch warehouse operations.
+let customDefinitions=[],customSaved=null,customBusy=false;
+function customControls(){
+  for(const id of ['custom-load','custom-save','custom-history'])$(id).disabled=!key||customBusy;
+  for(const id of ['custom-generate','custom-validate'])$(id).disabled=!key||customBusy||!customSaved;
+  for(const id of ['custom-add','custom-versions','custom-batches','custom-name'])$(id).disabled=customBusy;
+  for(const input of $('custom-fields').querySelectorAll('input,select,button'))input.disabled=customBusy;
+}
+function customDirty(){customSaved=null;$('custom-version-note').textContent='Unsaved changes. Save a new version before generating or validating.';customControls();}
+function customField(field={section:'Details',name:'NewField',type:'text',required:true,min:1,max:32}){
+  const row=document.createElement('tr');
+  for(const name of ['section','name','type','required','min','max','choices']){
+    const cell=document.createElement('td');let input;
+    if(name==='type'){input=document.createElement('select');for(const v of ['text','integer','boolean','identifier','choice'])input.append(new Option(v,v));input.value=field.type;}
+    else{input=document.createElement('input');input.type=name==='required'?'checkbox':['min','max'].includes(name)?'number':'text';if(name==='required')input.checked=field.required;else input.value=name==='choices'?(field.choices||[]).join(','):field[name];}
+    input.dataset.field=name;input.setAttribute('aria-label',name);input.addEventListener('input',customDirty);cell.append(input);row.append(cell);
+  }
+  const cell=document.createElement('td'),remove=document.createElement('button');remove.type='button';remove.className='text-button';remove.textContent='Remove';remove.addEventListener('click',()=>{row.remove();customDirty();});cell.append(remove);row.append(cell);$('custom-fields').append(row);
+}
+function customShowDefinition(saved){
+  $('custom-name').value=saved.name;$('custom-fields').replaceChildren();saved.definition.fields.forEach(customField);customSaved=saved;
+  $('custom-version-note').textContent=`Using ${saved.name} version ${saved.version} for generation and validation.`;customControls();
+}
+async function customReload(){
+  customDefinitions=await autoRequest('GET','/api/message-types');$('custom-versions').replaceChildren(new Option('Select a saved definition',''));
+  customDefinitions.forEach((d,i)=>$('custom-versions').append(new Option(`${d.name} · version ${d.version}`,String(i))));
+}
+async function customAction(action){
+  if(customBusy)return;if(!key){$('custom-notice').textContent='Connect to the dashboard first.';return;}
+  customBusy=true;customControls();$('custom-notice').textContent='Working…';
+  try{await action();}catch(error){$('custom-notice').textContent=error.message;}finally{customBusy=false;customControls();}
+}
+function customShowBatch(batch){
+  const messages=batch.messages,valid=messages.filter(m=>m.actualValid).length;
+  $('custom-summary').textContent=`${batch.name} v${batch.version} · ${messages.length} messages · ${valid} valid · ${messages.length-valid} rejected · ${messages.filter(m=>m.matched===false).length} unexpected results. Green: valid; gold: expected rejection; red: other rejection/mismatch. ERP validation only.`;
+  $('custom-notice').textContent=`Recorded batch ${batch.batchId} · ${batch.mode} · ${batch.createdAt}`;
+  const inspect=m=>{$('custom-payload').value=JSON.stringify(m.payload,null,2);$('custom-result').textContent=JSON.stringify({type:batch.name,version:batch.version,...m},null,2);};
+  $('custom-map').replaceChildren();
+  for(const m of messages){const tile=document.createElement('button');tile.type='button';tile.className=m.matched===false?'unexpected':m.actualValid?'accepted':m.matched===true?'expected':'unexpected';tile.title=`Message ${m.sequence}: ${m.actualValid?'valid':'rejected'}${m.injectedFault?' · '+m.injectedFault:''}`;tile.setAttribute('aria-label',tile.title);tile.addEventListener('click',()=>inspect(m));$('custom-map').append(tile);}
+  if(messages.length)inspect(messages[0]);
+}
+$('custom-add').addEventListener('click',()=>{if($('custom-fields').children.length>=24){$('custom-notice').textContent='Maximum 24 fields.';return;}customField();customDirty();});
+$('custom-name').addEventListener('input',customDirty);
+$('custom-load').addEventListener('click',()=>customAction(async()=>{await customReload();$('custom-notice').textContent=`${customDefinitions.length} saved versions loaded. Select one to edit or test.`;}));
+$('custom-versions').addEventListener('change',()=>{if($('custom-versions').value!=='')customShowDefinition(customDefinitions[Number($('custom-versions').value)]);});
+$('custom-save').addEventListener('click',()=>customAction(async()=>{
+  const fields=[...$('custom-fields').children].map(row=>{const read=n=>row.querySelector(`[data-field="${n}"]`);return{section:read('section').value.trim(),name:read('name').value.trim(),type:read('type').value,required:read('required').checked,min:Number(read('min').value),max:Number(read('max').value),choices:read('type').value==='choice'?read('choices').value.split(',').map(x=>x.trim()):null};});
+  const saved=await autoRequest('POST','/api/message-types',{name:$('custom-name').value.trim(),fields});await customReload();customShowDefinition(saved);$('custom-versions').value=String(customDefinitions.findIndex(d=>d.name===saved.name&&d.version===saved.version));$('custom-notice').textContent=`Saved ${saved.name} version ${saved.version}. Ready to generate data.`;
+}));
+$('custom-generate').addEventListener('click',()=>customAction(async()=>{
+  const options={count:Number($('custom-count').value),errorPercent:Number($('custom-errors').value),seed:Number($('custom-seed').value)};
+  if(!Object.values(options).every(Number.isInteger))throw new Error('Use whole numbers for generation settings.');
+  customShowBatch(await autoRequest('POST',`/api/message-types/${encodeURIComponent(customSaved.name)}/${customSaved.version}/generate`,options));
+}));
+$('custom-validate').addEventListener('click',()=>customAction(async()=>{
+  let payload;try{payload=JSON.parse($('custom-payload').value);}catch{throw new Error('Message content must be valid JSON.');}
+  if(!payload||Array.isArray(payload)||typeof payload!=='object')throw new Error('Use a JSON object with named sections.');
+  customShowBatch(await autoRequest('POST',`/api/message-types/${encodeURIComponent(customSaved.name)}/${customSaved.version}/validate`,payload));
+}));
+$('custom-history').addEventListener('click',()=>customAction(async()=>{const batches=await autoRequest('GET','/api/custom-batches');$('custom-batches').replaceChildren(new Option('Select a recorded batch',''));for(const b of batches)$('custom-batches').append(new Option(`${b.name} v${b.version} · ${b.createdAt} UTC`,b.batchId));$('custom-notice').textContent=`${batches.length} recent batches loaded.`;}));
+$('custom-batches').addEventListener('change',()=>{if($('custom-batches').value)customAction(async()=>{const batch=await autoRequest('GET',`/api/custom-batches/${$('custom-batches').value}`);await customReload();const saved=customDefinitions.find(d=>d.name===batch.name&&d.version===batch.version);if(saved)customShowDefinition(saved);customShowBatch(batch);});});
+customField({section:'Header',name:'MessageId',type:'identifier',required:true,min:0,max:100});
+customField({section:'Destination',name:'Area',type:'choice',required:true,min:0,max:100,choices:['A01','A02','B01']});
+customField({section:'Details',name:'Quantity',type:'integer',required:true,min:1,max:100});
+setInterval(customControls,1000);customControls();
