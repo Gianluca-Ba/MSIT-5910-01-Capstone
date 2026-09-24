@@ -10,6 +10,8 @@ Start with [setup and deployment](docs/deployment.md), then the [API walkthrough
 
 ## Structure
 
+For step-by-step instructions with screenshots, read the [illustrated user guide](docs/user-guide.md) or download the [Word guide](docs/ERP-WMS-User-Guide.docx).
+
 - `src/`: ERP submission service, WMS acceptance service, shared contracts and SQL logic.
 - `tests/`: xUnit validation and delivery-outcome tests.
 - `scripts/`: database initialization, startup, shutdown, demo and HTTP/SQL assertions.
