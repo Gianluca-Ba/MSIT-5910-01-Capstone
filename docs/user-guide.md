@@ -14,7 +14,7 @@ Message designer is an ERP validation lab. It checks custom message content agai
 
 - Use the Windows development computer with the project at C:\Progetti\reliable-erp-wms.
 
-- The SQL host MOBILE27 must be reachable on the configured network. RDP connectivity alone does not prove that SQL is reachable.
+- The local SQL Server instance .\SQLDEVELOPER must be running. The application uses CapstoneErp and CapstoneWms on this computer; no remote SQL host is required.
 
 - Both services must be running. The dashboard is at http://127.0.0.1:5080/ on the development computer.
 
@@ -22,7 +22,7 @@ Message designer is an ERP validation lab. It checks custom message content agai
 
 ### About the screenshots
 
-The screenshots show the implemented dashboard and results retained from the 23 September browser session. During preparation on 24 September, MOBILE27 was on another network and services could not become ready. These are captured examples, not a new live verification run. Identifiers and material codes are synthetic demonstration data.
+All screenshots were captured from the local environment on 24 September 2026. The guide distinguishes the 1000-message ERP to WMS delivery run from the separate 1000-message custom validation batch. Both use synthetic data and 30 percent intentional errors. The displayed results are actual recorded outcomes, not mockups.
 
 Software baseline: cf248eb on feature/message-customization. Scroll to the named section if a navigation link is not visible in your version.
 
@@ -46,9 +46,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Open-Dashboard
 
 - Clear the clipboard after pasting. Refreshing or selecting Disconnect clears the tab key; reconnect when needed.
 
-![Figure 1. Connection panel and delivery path. The browser requires a key before Connect can proceed.](images/user-guide/01-connection.png)
+![Figure 1. Authenticated local dashboard session and ERP to WMS delivery path. The API key is masked.](images/user-guide/01-connection.png)
 
-Figure 1. Connection panel and delivery path. The browser requires a key before Connect can proceed.
+Figure 1. Authenticated local dashboard session and ERP to WMS delivery path. The API key is masked.
 
 ExecutionPolicy Bypass applies only to the launched PowerShell process. If a demo port is occupied, use scripts/Stop-Demo.ps1 to stop the tracked processes before restarting. Do not start a second demo over the existing one.
 
@@ -64,9 +64,9 @@ ExecutionPolicy Bypass applies only to the launched PowerShell process. If a dem
 
 - Read Warehouse evidence. Expect one accepted order and one receipt for a successful fresh order. Compare the receipt with the ERP decision.
 
-![Figure 2. Recorded evidence with one order and one receipt after a quantity conflict was rejected.](images/user-guide/05-order-delivery.png)
+![Figure 2. Fresh local evidence for a delivered batch order: one warehouse order and one receipt after a quantity conflict was rejected.](images/user-guide/05-order-delivery.png)
 
-Figure 2. Recorded evidence with one order and one receipt after a quantity conflict was rejected.
+Figure 2. Fresh local evidence for a delivered batch order: one warehouse order and one receipt after a quantity conflict was rejected.
 
 ### Check duplicate protection
 
@@ -86,15 +86,15 @@ Automatic message lab uses 1000 SQL-backed templates for real order submissions.
 
 - Select a tile for its payload, response, receipt, timestamps and expected outcome. Load recent runs reopens saved evidence.
 
-![Figure 3. Sender controls before arming. Buttons are disabled here because the session is disconnected.](images/user-guide/02-automatic-sender.png)
+![Figure 3. Completed local 1000-message delivery run with 700 acknowledgements, 300 expected rejections and zero unexpected outcomes.](images/user-guide/02-automatic-sender.png)
 
-Figure 3. Sender controls before arming. Buttons are disabled here because the session is disconnected.
+Figure 3. Completed local 1000-message delivery run with 700 acknowledgements, 300 expected rejections and zero unexpected outcomes.
 
 Gray is queued, blue is sending or awaiting delivery, green is acknowledged, gold is an expected rejection, and red is unexpected or uncertain. Stop cancels unsent work; submitted orders finish normally. Intentional invalid quantities and conflicts are controlled test cases, not real-world failure-rate estimates.
 
 ## Design a custom message type
 
-The RQSM example contains a Header identifier, a Destination area, and Details fields for quantity and material. Reusing a section name groups its fields together.
+The GuideWarehouseNotice example contains a Header identifier, a Destination area, and Details fields for quantity and material. Reusing a section name groups its fields together.
 
 - Enter a case-sensitive type name of up to 40 letters, digits or underscores, starting with a letter.
 
@@ -104,9 +104,9 @@ The RQSM example contains a Header identifier, a Destination area, and Details f
 
 - Click Save as new version. Saving the same name creates the next immutable version; old evidence retains its original rules.
 
-![Figure 4. RQSM version 1 groups four fields into three sections. Example material choices are box, hb1 and to0.](images/user-guide/03-message-designer.png)
+![Figure 4. GuideWarehouseNotice version 1 groups four fields into three sections. Example material choices are BOX, PALLET and CARTON.](images/user-guide/03-message-designer.png)
 
-Figure 4. RQSM version 1 groups four fields into three sections. Example material choices are box, hb1 and to0.
+Figure 4. GuideWarehouseNotice version 1 groups four fields into three sections. Example material choices are BOX, PALLET and CARTON.
 
 Required fields cannot be omitted. Optional fields may be omitted, but a present null value is invalid. Unsaved edits disable generation and validation until saved. Selecting a saved definition replaces the editor contents.
 
@@ -118,9 +118,9 @@ Required fields cannot be omitted. Optional fields may be omitted, but a present
 
 - Select a tile to inspect content and results. ActualValid is the observed result; Matched compares it with the expected validity.
 
-![Figure 5. Captured RQSM batch with 1000 messages, 500 valid, 500 rejected and zero unexpected results at 50 percent injection.](images/user-guide/04-validation-results.png)
+![Figure 5. Local custom validation batch with 1000 messages, 700 valid, 300 rejected and zero unexpected results at 30 percent injection.](images/user-guide/04-validation-results.png)
 
-Figure 5. Captured RQSM batch with 1000 messages, 500 valid, 500 rejected and zero unexpected results at 50 percent injection.
+Figure 5. Local custom validation batch with 1000 messages, 700 valid, 300 rejected and zero unexpected results at 30 percent injection.
 
 Green means valid; gold is an intentional rejection; red indicates a mismatch or a rejected manual message. The first injection mode replaces one field with null. This is a validation fault, not a network error.
 
@@ -132,7 +132,7 @@ Load recent validation batches retrieves the latest 20 batches for your source a
 
 ### When a connection fails
 
-- ERP unavailable or page unreachable: first confirm MOBILE27 is reachable on the configured SQL network, then run Start-Demo. A cached page is not proof of running services.
+- ERP unavailable or page unreachable: confirm SQL Server (SQLDEVELOPER) is running locally, then run Start-Demo. A cached page is not proof of running services.
 
 - Connect blocked or authentication error: run Open-Dashboard again, paste the copied key and reconnect. Do not enter SQL credentials.
 
@@ -158,6 +158,6 @@ Load recent validation batches retrieves the latest 20 batches for your source a
 
 ### Evidence and limits
 
-The implementation checkpoint passed 44 unit tests and 60 HTTP/SQL assertions before this documentation session. They cover validation, versions, generated outcomes, source isolation and the existing order flow. They were not rerun with MOBILE27 on a different network.
+The implementation checkpoint passed 44 unit tests. After deployment to local SQL, 60 HTTP/SQL assertions and automatic-sender checks passed. This guide adds two fresh 1000-message batches: an ERP to WMS delivery run and a custom validation run. Batch details and identities are listed in the accompanying local verification record.
 
 Custom types support independent scalar fields in named sections. Repeating lists, related-field rules, additional warehouse handlers and custom delivery tracking remain future work. Use synthetic data and never publish local credentials.

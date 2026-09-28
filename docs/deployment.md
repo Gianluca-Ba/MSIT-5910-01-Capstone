@@ -2,17 +2,19 @@
 
 ## Requirements
 
-Windows PowerShell 5.1 or later for these demo scripts, the .NET SDK pinned in `global.json`, and an authorized SQL Server instance. Services run on ARM64 Windows; SQL runs on a separate x64 host. No production ERP, machinery, or workplace data is required. Open `ReliableErpWms.slnx` in a compatible Visual Studio installation, or use the .NET CLI. Visual Studio installation itself is not part of the delivered software.
+Windows PowerShell 5.1 or later for these demo scripts, the .NET SDK pinned in `global.json`, and an authorized SQL Server instance. The current development environment uses the local instance `.\SQLDEVELOPER`, with `CapstoneErp` and `CapstoneWms` on the same computer as the services. No remote SQL host, production ERP, machinery, or workplace data is required. Open `ReliableErpWms.slnx` in a compatible Visual Studio installation, or use the .NET CLI. Visual Studio installation itself is not part of the delivered software.
 
 ## Initialize once
 
 From the repository root, run:
 
 ```powershell
-./scripts/Initialize-Demo.ps1 -Server 'tcp:YOUR-SQL-HOST,YOUR-PORT'
+./scripts/Initialize-Demo.ps1 -Server '.\SQLDEVELOPER'
 ```
 
-The script prompts for a SQL administrator credential. It creates only `CapstoneErp`, `CapstoneWms`, `CapstoneErpApp`, and `CapstoneWmsApp`; it refuses to touch existing objects with those names. It applies the two versioned schema scripts. Application logins have SELECT/INSERT on their own tables and, for ERP, UPDATE on the outbox. They cannot administer the server or delete tables. Administrator credentials are not retained. A setup failure may leave newly created objects; inspect them before any rerun rather than dropping data automatically.
+The script prompts for a SQL administrator credential. It creates only `CapstoneErp`, `CapstoneWms`, `CapstoneErpApp`, and `CapstoneWmsApp`; it refuses to touch existing objects with those names. It applies the base schemas plus the ERP automation and customization migrations. Application logins have SELECT/INSERT on their own tables, with ERP UPDATE rights on the outbox and automation state tables. Custom definitions and validation batches have SELECT/INSERT only. The application logins cannot administer the server or delete tables. Administrator credentials are not retained. A setup failure may leave newly created objects; inspect them before any rerun rather than dropping data automatically.
+
+The current local environment is already initialized. Do not rerun initialization to start it; use `Start-Demo.ps1`. The earlier remote database is not an application dependency, and its historical records were not imported into this fresh local setup.
 
 Generated connection strings and API keys are stored as Windows user-bound encrypted values in ignored `.local/secrets.xml`. Run startup as the same Windows user. Keep that file private and out of recordings. The nonsecret XML configuration provides loopback URLs and the worker switch; process environment variables override it. Authentication maps API keys to sources on the server, never from submitted payloads.
 
