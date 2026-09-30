@@ -1,0 +1,10 @@
+  Capstone.Core -> src\Capstone.Core\bin\Release\net10.0\Capstone.Core.dll
+  Capstone.Wms -> src\Capstone.Wms\bin\Release\net10.0\Capstone.Wms.dll
+  Capstone.UnitTests -> tests\Capstone.UnitTests\bin\Release\net10.0\Capstone.UnitTests.dll
+  Capstone.Erp -> src\Capstone.Erp\bin\Release\net10.0\Capstone.Erp.dll
+
+Compilazione completata.
+    Avvisi: 0
+    Errori: 0
+
+Tempo trascorso 00:00:00.92

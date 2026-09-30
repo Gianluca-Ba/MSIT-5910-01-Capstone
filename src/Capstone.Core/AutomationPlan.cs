@@ -24,7 +24,13 @@ public static class AutomationPlan
             var scenario = "Valid"; var expected = "Acknowledged";
             if (errors.Contains(i))
             {
-                if (i % 2 == 0 && previous is not null) { scenario = "Conflict"; expected = "ConflictRejected"; order = previous with { Quantity = previous.Quantity + 1, CorrelationId = Guid.NewGuid() }; }
+                if (i % 2 == 0 && previous is not null)
+                {
+                    scenario = "Conflict"; expected = "ConflictRejected";
+                    // Change immutable content without turning a conflict into invalid input.
+                    var changedQuantity = previous.Quantity == 100000 ? 99999 : previous.Quantity + 1;
+                    order = previous with { Quantity = changedQuantity, CorrelationId = Guid.NewGuid() };
+                }
                 else { scenario = "InvalidQuantity"; expected = "ValidationRejected"; order = order with { Quantity = 0 }; }
             }
             else previous = order;

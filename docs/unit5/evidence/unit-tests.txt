@@ -1,0 +1,10 @@
+  Capstone.Core -> src\Capstone.Core\bin\Release\net10.0\Capstone.Core.dll
+  Capstone.UnitTests -> tests\Capstone.UnitTests\bin\Release\net10.0\Capstone.UnitTests.dll
+Esecuzione dei test per tests\Capstone.UnitTests\bin\Release\net10.0\Capstone.UnitTests.dll (.NETCoreApp,Version=v10.0)
+Un totale di 1 file di test corrisponde al criterio specificato.
+File di risultati: artifacts\unit5-final\gianlucabarsaglini_GIANLUCABAR7496_2026-09-29_23_05_26_net10.0.trx
+
+Superato!     - Non superati:     0. Superati:    54. Ignorati:     0. Totale:    54. Durata: 68 ms - Capstone.UnitTests.dll (net10.0)
+
+Allegati:
+  artifacts\unit5-final\091fb8e7-8b8d-44b5-ba68-d682e6cc9e4a\coverage.cobertura.xml

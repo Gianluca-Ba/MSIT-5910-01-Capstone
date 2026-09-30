@@ -1,0 +1,14 @@
+Coverage measured with coverlet.collector 6.0.4
+Scope: instrumented Capstone.Core assembly; includes SQL, middleware and generated code.
+Overall lines: 176/317 (55.52%)
+Overall branches: 221/368 (60.05%)
+
+Class                                      Line     Branch
+OrderRules                                 100.00%  100.00%
+DeliveryOutcome                            100.00%  100.00%
+AutomationPlan                             100.00%  100.00%
+MessageDefinitions                          98.36%   81.69%
+
+SqlStore and ServiceSetup are not exercised by this unit suite.
+ERP/WMS executables are outside this coverage measurement.
+Live HTTP/SQL checks are separate integration evidence.

@@ -1,0 +1,607 @@
+  Capstone.Core -> src\Capstone.Core\bin\Release\net10.0\Capstone.Core.dll
+  Capstone.UnitTests -> tests\Capstone.UnitTests\bin\Release\net10.0\Capstone.UnitTests.dll
+Esecuzione dei test per tests\Capstone.UnitTests\bin\Release\net10.0\Capstone.UnitTests.dll (.NETCoreApp,Version=v10.0)
+Un totale di 1 file di test corrisponde al criterio specificato.
+[xUnit.net 00:00:00.25]     Capstone.UnitTests.Unit5RegressionTests.Conflict_injection_at_maximum_quantity_remains_valid_business_input [FAIL]
+  Non superato Capstone.UnitTests.Unit5RegressionTests.Conflict_injection_at_maximum_quantity_remains_valid_business_input [82 ms]
+  Messaggio di errore:
+   Assert.All() Failure: 148 out of 148 items in the collection did not pass.
+[0]:   Item:  PlannedMessage { Sequence = 15, TemplateId = 819, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d98a45c4-0cad-4031-9faa-97f5aa96e132, Sku = SKU-189, Quantity = 100001, CorrelationId = e367f96b-fdc0-4f50-ad63-6266fa69f1d5 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[1]:   Item:  PlannedMessage { Sequence = 25, TemplateId = 916, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 100f337c-4e87-4977-b280-2099e89a4e47, Sku = SKU-675, Quantity = 100001, CorrelationId = f72c0afc-bb20-43d0-a997-50452facbcc8 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[2]:   Item:  PlannedMessage { Sequence = 43, TemplateId = 527, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = a7417022-0f43-4e84-b801-09550ba87c9c, Sku = SKU-19, Quantity = 100001, CorrelationId = 9e645643-662c-4fc0-9116-094b5770678d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[3]:   Item:  PlannedMessage { Sequence = 55, TemplateId = 577, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7d5353c7-5bcc-4652-b157-ec235ecb7d1b, Sku = SKU-770, Quantity = 100001, CorrelationId = e0e21164-41db-44a1-9686-040642cdcfa0 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[4]:   Item:  PlannedMessage { Sequence = 57, TemplateId = 160, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 0224c696-7e43-40c6-973d-b46c1830a06e, Sku = SKU-501, Quantity = 100001, CorrelationId = 2022f3c4-6fa6-42c3-b678-070847d3bc9e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[5]:   Item:  PlannedMessage { Sequence = 59, TemplateId = 145, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d38f9fe5-2fea-4ade-ad36-3d42c70c084d, Sku = SKU-171, Quantity = 100001, CorrelationId = fbb7871c-8fb6-41e0-a676-f279c4e0ca20 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[6]:   Item:  PlannedMessage { Sequence = 65, TemplateId = 593, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 03839489-79ed-41ce-b108-b0436707b9cc, Sku = SKU-426, Quantity = 100001, CorrelationId = a797339c-79c3-4bfa-839b-e52c66a7e0b1 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[7]:   Item:  PlannedMessage { Sequence = 71, TemplateId = 418, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 84192085-5c45-45b3-917a-2bc656585a3a, Sku = SKU-931, Quantity = 100001, CorrelationId = 9c41d5e8-f7c7-4683-b828-b8cb41a15ae7 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[8]:   Item:  PlannedMessage { Sequence = 73, TemplateId = 768, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = abb7a5b4-6dc7-4b2e-8b90-f675cb67b082, Sku = SKU-207, Quantity = 100001, CorrelationId = cb1dcff8-e04f-4103-bab9-746975f6a39d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[9]:   Item:  PlannedMessage { Sequence = 75, TemplateId = 174, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = c79a6cd9-5fe6-47e7-8142-99ec410ff956, Sku = SKU-991, Quantity = 100001, CorrelationId = 6dd3506e-4c1c-4e6e-a48d-aefbcccd75a0 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[10]:  Item:  PlannedMessage { Sequence = 79, TemplateId = 812, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 6567b15a-9707-4358-83df-a729a9a07c4e, Sku = SKU-337, Quantity = 100001, CorrelationId = 22251654-26f5-481b-b770-cc81b5334f69 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[11]:  Item:  PlannedMessage { Sequence = 83, TemplateId = 132, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 0489c65a-b7d9-42d3-82dd-968f9f1dbeb8, Sku = SKU-718, Quantity = 100001, CorrelationId = e558e2eb-ba9e-4cb6-96db-81558b9f82eb } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[12]:  Item:  PlannedMessage { Sequence = 95, TemplateId = 569, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 3b9327ff-3f80-4497-8875-b083ece05721, Sku = SKU-722, Quantity = 100001, CorrelationId = c17b908d-5389-49b8-941c-86eb121a8bba } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[13]:  Item:  PlannedMessage { Sequence = 99, TemplateId = 556, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 6e2a7385-5d39-4519-9e9f-a3b5ef44df2a, Sku = SKU-6, Quantity = 100001, CorrelationId = dbf4ac0b-373e-416a-92d4-e4b411e98af3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[14]:  Item:  PlannedMessage { Sequence = 105, TemplateId = 972, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = c5610f11-d4db-4eb0-acbc-4cda95a50ea5, Sku = SKU-240, Quantity = 100001, CorrelationId = 2a1d1f6c-200f-4161-ad3c-5b96569d4804 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[15]:  Item:  PlannedMessage { Sequence = 107, TemplateId = 651, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = c5610f11-d4db-4eb0-acbc-4cda95a50ea5, Sku = SKU-240, Quantity = 100001, CorrelationId = 287825df-3882-4341-89e4-7dc38f311227 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[16]:  Item:  PlannedMessage { Sequence = 115, TemplateId = 164, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5e351891-d045-4be9-8b52-a5ee3908c6d1, Sku = SKU-606, Quantity = 100001, CorrelationId = 2acaea96-bb3b-4f08-b45a-5c70018a568d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[17]:  Item:  PlannedMessage { Sequence = 117, TemplateId = 379, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = de726f5a-65cd-4dd5-85c7-b748795a04b8, Sku = SKU-158, Quantity = 100001, CorrelationId = e90504a4-fd45-407c-a19f-83952dd50c76 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[18]:  Item:  PlannedMessage { Sequence = 127, TemplateId = 300, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = b93a89aa-9124-48d3-8bc2-06b40bee8249, Sku = SKU-930, Quantity = 100001, CorrelationId = 33ec84b2-9bcf-4c74-9c05-090a262122d6 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[19]:  Item:  PlannedMessage { Sequence = 133, TemplateId = 333, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f59189df-ce6d-4f24-b4b0-4a9b883a5d98, Sku = SKU-308, Quantity = 100001, CorrelationId = fb8b596e-9e9a-4ba5-8c4c-75f514195b5e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[20]:  Item:  PlannedMessage { Sequence = 135, TemplateId = 827, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f59189df-ce6d-4f24-b4b0-4a9b883a5d98, Sku = SKU-308, Quantity = 100001, CorrelationId = 4b8bb9ef-1f9c-4bba-a3b4-efac4636eb0b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[21]:  Item:  PlannedMessage { Sequence = 137, TemplateId = 957, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d333253d-1e4e-42ca-b963-6e46050b07cc, Sku = SKU-966, Quantity = 100001, CorrelationId = db54f783-1535-49b4-ab76-83eac3da42c3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[22]:  Item:  PlannedMessage { Sequence = 139, TemplateId = 703, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d333253d-1e4e-42ca-b963-6e46050b07cc, Sku = SKU-966, Quantity = 100001, CorrelationId = 8046c867-0744-4066-88cc-33f1375d66c5 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[23]:  Item:  PlannedMessage { Sequence = 143, TemplateId = 940, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ddf84fb8-1551-4cd6-9f15-551e3035662a, Sku = SKU-711, Quantity = 100001, CorrelationId = 71526b0c-e097-4d91-8489-4cd6aee3a75e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[24]:  Item:  PlannedMessage { Sequence = 163, TemplateId = 415, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 94c4f08e-b77f-4083-ae02-50c2669015e7, Sku = SKU-625, Quantity = 100001, CorrelationId = 71fc469e-6dbf-4178-a0ae-c0cf58535a7a } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[25]:  Item:  PlannedMessage { Sequence = 169, TemplateId = 797, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 65aa32d3-aed2-424e-8193-d93d3fcdd178, Sku = SKU-351, Quantity = 100001, CorrelationId = 8c6fdb4b-ab26-4019-9b15-de59d4d22467 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[26]:  Item:  PlannedMessage { Sequence = 175, TemplateId = 865, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 51d6fba2-7b9d-4752-83b0-995124757094, Sku = SKU-851, Quantity = 100001, CorrelationId = 8bf360d3-e85f-46b4-97e7-b92f29ae0334 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[27]:  Item:  PlannedMessage { Sequence = 181, TemplateId = 829, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 23882d51-5a12-44f9-999b-71ee713a77b9, Sku = SKU-546, Quantity = 100001, CorrelationId = d693f60c-6b7a-45b2-9531-fc59a038cf47 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[28]:  Item:  PlannedMessage { Sequence = 187, TemplateId = 102, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 9773e68c-8683-491b-a5cb-e90734616534, Sku = SKU-828, Quantity = 100001, CorrelationId = 62f75c68-9b00-40d0-bdee-5095867bd16c } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[29]:  Item:  PlannedMessage { Sequence = 191, TemplateId = 155, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5c9817f9-7bab-449d-8931-ed43d82133d3, Sku = SKU-323, Quantity = 100001, CorrelationId = d9f302cc-25d3-4c62-8947-4ec17b893591 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[30]:  Item:  PlannedMessage { Sequence = 223, TemplateId = 265, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 79089759-b222-4558-8dd3-bde513e2a258, Sku = SKU-627, Quantity = 100001, CorrelationId = a3cc569f-07e1-48a7-8997-2f1bdd69e878 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[31]:  Item:  PlannedMessage { Sequence = 225, TemplateId = 349, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 9ab102e0-e81f-4847-aafe-c1e7122f2e5c, Sku = SKU-525, Quantity = 100001, CorrelationId = 49e36039-4ee2-4cee-a03e-592b7c90edee } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[32]:  Item:  PlannedMessage { Sequence = 231, TemplateId = 789, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 6d954b00-f5fa-4ff2-bdbc-85c70ec66db9, Sku = SKU-741, Quantity = 100001, CorrelationId = e532d8bc-419b-418d-b292-237d40bd0f52 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[33]:  Item:  PlannedMessage { Sequence = 235, TemplateId = 590, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = a59e2501-6380-4f33-a9d3-4b22d1795fa0, Sku = SKU-210, Quantity = 100001, CorrelationId = 6988069a-dcc7-48a7-b58c-1cf397d416e8 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[34]:  Item:  PlannedMessage { Sequence = 247, TemplateId = 425, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ff3810e5-4c03-4943-bc9b-4dc1406525f2, Sku = SKU-353, Quantity = 100001, CorrelationId = d83e7892-0e12-4727-b5cf-ee3f816a8e17 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[35]:  Item:  PlannedMessage { Sequence = 253, TemplateId = 212, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f0823e80-a905-4ff0-a00f-62743bc8e065, Sku = SKU-532, Quantity = 100001, CorrelationId = 7d1338b2-37b9-48eb-aa95-00ae1722d329 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[36]:  Item:  PlannedMessage { Sequence = 259, TemplateId = 54, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d2aa86ef-4971-4756-9358-c0598e1d8ac0, Sku = SKU-442, Quantity = 100001, CorrelationId = 02beccba-6221-42b6-bf43-79dbdf72d29d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[37]:  Item:  PlannedMessage { Sequence = 263, TemplateId = 982, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 97e866d7-b257-4f62-be0f-9dfbf0c705d5, Sku = SKU-13, Quantity = 100001, CorrelationId = f879e546-1e23-4d6d-acfd-f38dde22af86 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[38]:  Item:  PlannedMessage { Sequence = 265, TemplateId = 358, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 6db78ac7-bd4c-429a-99b7-de8e2ff6b1eb, Sku = SKU-594, Quantity = 100001, CorrelationId = a3a148f9-7694-4811-9657-bff1c2b6ef97 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[39]:  Item:  PlannedMessage { Sequence = 285, TemplateId = 29, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = daf3bd4b-cdbe-4906-98e3-6676316deab0, Sku = SKU-561, Quantity = 100001, CorrelationId = 45f02e2e-a08f-49fa-9ca1-d75b35672467 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[40]:  Item:  PlannedMessage { Sequence = 287, TemplateId = 429, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 6ea502cb-2b2c-4b95-99a0-023b6fb989d6, Sku = SKU-73, Quantity = 100001, CorrelationId = bb8e506b-0bbb-40c0-81bf-361f3c29f7e5 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[41]:  Item:  PlannedMessage { Sequence = 293, TemplateId = 646, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f9a88c5d-bf7d-4c75-a91f-9c85c7541ceb, Sku = SKU-945, Quantity = 100001, CorrelationId = ed9f00f6-f10b-49ed-b9dd-fffbefd31abd } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[42]:  Item:  PlannedMessage { Sequence = 295, TemplateId = 42, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = df234257-5d13-4df2-b91e-6817cda1d4fa, Sku = SKU-620, Quantity = 100001, CorrelationId = fa565955-58c8-4bd6-8427-5c278c214bc8 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[43]:  Item:  PlannedMessage { Sequence = 299, TemplateId = 430, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = b4721bc9-e307-4c1d-bab1-9deabd8fc5ae, Sku = SKU-576, Quantity = 100001, CorrelationId = 11af12f7-cdf6-4d8c-8095-da2f6b68943b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[44]:  Item:  PlannedMessage { Sequence = 315, TemplateId = 423, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 8f5ffa16-3d96-40ca-971c-9532c9450fc4, Sku = SKU-562, Quantity = 100001, CorrelationId = a8c2aba2-d1dc-4014-b076-553364270aa7 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[45]:  Item:  PlannedMessage { Sequence = 323, TemplateId = 469, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ad142689-0dca-4f9f-adaf-fc8f6aeacf69, Sku = SKU-915, Quantity = 100001, CorrelationId = 8b39c0a1-5631-4eb9-806a-4de2e70ef4e8 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[46]:  Item:  PlannedMessage { Sequence = 327, TemplateId = 835, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 9e675d2d-9301-4ff1-837c-7f927d1f0f3d, Sku = SKU-314, Quantity = 100001, CorrelationId = 1867504e-96cc-44f6-880a-8903abaa88d8 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[47]:  Item:  PlannedMessage { Sequence = 329, TemplateId = 56, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5855bceb-445e-4ec5-a940-da2c8de5db2f, Sku = SKU-190, Quantity = 100001, CorrelationId = 6572c637-cee8-4032-a1b7-cada4301da52 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[48]:  Item:  PlannedMessage { Sequence = 347, TemplateId = 839, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 53baa55b-befd-495d-800e-09a6857543b9, Sku = SKU-943, Quantity = 100001, CorrelationId = 5cb0556e-1771-4112-9557-70fe49423e6e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[49]:  Item:  PlannedMessage { Sequence = 375, TemplateId = 454, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 44d69ab6-9e58-44a2-91c6-3fa3d47753ff, Sku = SKU-271, Quantity = 100001, CorrelationId = 9229d99f-7849-4aa4-91fb-3a697fad44b3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[50]:  Item:  PlannedMessage { Sequence = 377, TemplateId = 111, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7e75ce76-15b7-4658-8b50-08eacf83f1d8, Sku = SKU-794, Quantity = 100001, CorrelationId = e1f0b5b0-8662-4cdf-b785-55520078acee } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[51]:  Item:  PlannedMessage { Sequence = 379, TemplateId = 933, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 22c1564f-42c0-4ee9-a6d7-3e25f2419ec4, Sku = SKU-108, Quantity = 100001, CorrelationId = 92748b13-7fe4-4b51-82f5-70fabc254bac } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[52]:  Item:  PlannedMessage { Sequence = 387, TemplateId = 619, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 0fb4dc21-fb25-49b9-8525-9db310958725, Sku = SKU-378, Quantity = 100001, CorrelationId = 0d692404-dad8-42ee-a250-d7d28d769fb4 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[53]:  Item:  PlannedMessage { Sequence = 389, TemplateId = 685, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = b7484af5-66e5-4039-a512-306e98dbf8e2, Sku = SKU-888, Quantity = 100001, CorrelationId = df35c186-b945-4d09-8a61-566b5ba1004d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[54]:  Item:  PlannedMessage { Sequence = 393, TemplateId = 762, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ed8adf84-a4f7-47bc-a658-cf89dd6b8454, Sku = SKU-575, Quantity = 100001, CorrelationId = 1bb5c407-ef29-4e5f-8c9f-226b700b03ef } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[55]:  Item:  PlannedMessage { Sequence = 405, TemplateId = 668, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 79f38a31-2011-4fa7-95eb-b5cc06ab7085, Sku = SKU-103, Quantity = 100001, CorrelationId = 7851506c-75a7-459d-b8b4-c3585658576f } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[56]:  Item:  PlannedMessage { Sequence = 427, TemplateId = 410, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 91080cb5-3b38-47a8-a592-e614200dd403, Sku = SKU-643, Quantity = 100001, CorrelationId = f6d43223-126a-4d1f-98b0-8e1345ec523f } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[57]:  Item:  PlannedMessage { Sequence = 429, TemplateId = 27, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 782f5833-411b-4a5d-a533-b703ff43fc19, Sku = SKU-301, Quantity = 100001, CorrelationId = fb543a3c-7a44-44c1-8fb8-2b9c6e47743c } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[58]:  Item:  PlannedMessage { Sequence = 435, TemplateId = 484, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 91492183-0fa8-43e6-9b4f-c8356f1ecab6, Sku = SKU-458, Quantity = 100001, CorrelationId = bc13c630-ac4e-4c1b-bbb0-5b7d4d26d8d7 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[59]:  Item:  PlannedMessage { Sequence = 437, TemplateId = 913, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 8f8e6a54-8b9f-41c0-ab2b-110b3ea9fc90, Sku = SKU-778, Quantity = 100001, CorrelationId = aebce23e-9eb1-445d-8b88-a8f8ba2b0665 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[60]:  Item:  PlannedMessage { Sequence = 445, TemplateId = 17, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f7b5a749-709e-48bc-8333-ff19d5d90e5d, Sku = SKU-885, Quantity = 100001, CorrelationId = aaa5f361-6108-4cdd-af86-90079b7812c9 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[61]:  Item:  PlannedMessage { Sequence = 451, TemplateId = 63, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 898a45b1-72a5-4137-a26e-311033885866, Sku = SKU-844, Quantity = 100001, CorrelationId = f192052d-22c4-4fd8-bd52-8bc0a8e9a34e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[62]:  Item:  PlannedMessage { Sequence = 461, TemplateId = 204, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 663cf2a7-1b8d-4cde-b8d1-2c12b156c465, Sku = SKU-226, Quantity = 100001, CorrelationId = 3b5dcb04-dda9-45eb-aae0-0b6730a98268 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[63]:  Item:  PlannedMessage { Sequence = 467, TemplateId = 413, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = fa436a60-074d-4610-bdd6-7393b0f6ade7, Sku = SKU-845, Quantity = 100001, CorrelationId = 7d9b760d-297b-4758-8a9d-841be11b8d8a } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[64]:  Item:  PlannedMessage { Sequence = 491, TemplateId = 329, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f70290bd-5488-43ca-9d7d-9fa34c31563a, Sku = SKU-800, Quantity = 100001, CorrelationId = f227dfce-b0c0-4cd6-b0b4-07dc46353173 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[65]:  Item:  PlannedMessage { Sequence = 509, TemplateId = 622, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7c510af0-f22d-42b4-81b8-9da88f274a37, Sku = SKU-954, Quantity = 100001, CorrelationId = 3a2281cb-10b7-4c99-a2ce-bac989b38ba8 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[66]:  Item:  PlannedMessage { Sequence = 511, TemplateId = 76, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 2a119061-8c88-44fa-8288-b98a20f8b337, Sku = SKU-588, Quantity = 100001, CorrelationId = acc85a5d-70f6-428c-94b4-4476b91c429e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[67]:  Item:  PlannedMessage { Sequence = 513, TemplateId = 925, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 2e3b795c-45af-4563-a216-130cdbb25a39, Sku = SKU-214, Quantity = 100001, CorrelationId = 680c9f75-3a3f-4494-aa7a-5bd4fedd1b29 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[68]:  Item:  PlannedMessage { Sequence = 519, TemplateId = 907, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 4999201a-f190-4ab0-b6a6-86bfd4eada02, Sku = SKU-231, Quantity = 100001, CorrelationId = 63010156-cd3b-4d9a-a7a4-2f7587686e4c } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[69]:  Item:  PlannedMessage { Sequence = 523, TemplateId = 34, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5f71b0a8-0b60-4488-b6fc-07cb7a934760, Sku = SKU-578, Quantity = 100001, CorrelationId = a2dfcc4c-035b-4c88-96ed-6decbf33a906 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[70]:  Item:  PlannedMessage { Sequence = 529, TemplateId = 917, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 33ff97cf-6d81-4c50-a460-4906b23b06e9, Sku = SKU-551, Quantity = 100001, CorrelationId = af4bb0ac-e56c-4858-9c9d-0faac86c219e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[71]:  Item:  PlannedMessage { Sequence = 535, TemplateId = 740, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f72c925f-6ed1-4a5d-bcd4-d90f7f4f83ff, Sku = SKU-996, Quantity = 100001, CorrelationId = 10af0803-c1ed-4865-af2b-0bf519895537 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[72]:  Item:  PlannedMessage { Sequence = 537, TemplateId = 136, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 8daaf808-3d75-4c41-96ba-200717f9e467, Sku = SKU-133, Quantity = 100001, CorrelationId = 8c1f0a4d-502e-4016-9d67-05e36b0623b3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[73]:  Item:  PlannedMessage { Sequence = 541, TemplateId = 285, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d70114f8-fa9c-4191-a379-d0ef5fd08d5a, Sku = SKU-428, Quantity = 100001, CorrelationId = 396eb98d-87fa-497c-b1f8-8b6ecdeadbfc } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[74]:  Item:  PlannedMessage { Sequence = 545, TemplateId = 435, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = c95ba774-39ea-4cb2-8b51-25dde5f6b570, Sku = SKU-748, Quantity = 100001, CorrelationId = f880d4f7-5102-456f-97ff-7ba624ded8e4 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[75]:  Item:  PlannedMessage { Sequence = 559, TemplateId = 473, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 318c73a3-498c-49f2-a281-d2844338c210, Sku = SKU-875, Quantity = 100001, CorrelationId = 4a3aca1e-e07c-43ae-8f4c-25f30918a6d0 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[76]:  Item:  PlannedMessage { Sequence = 561, TemplateId = 581, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = fdbe1ff3-fcc9-466f-a149-7889ea9d7da4, Sku = SKU-87, Quantity = 100001, CorrelationId = 6830d81a-d2b7-4601-a0e3-a46cff44bfdf } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[77]:  Item:  PlannedMessage { Sequence = 563, TemplateId = 598, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = fdbe1ff3-fcc9-466f-a149-7889ea9d7da4, Sku = SKU-87, Quantity = 100001, CorrelationId = 3dc4f136-f05f-479b-a281-72b7a2951fcb } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[78]:  Item:  PlannedMessage { Sequence = 575, TemplateId = 824, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = eabdb6cf-970e-4dd5-ace4-fd55c6a226ef, Sku = SKU-284, Quantity = 100001, CorrelationId = 5901cf63-ef1c-43ea-bb25-2b83950d943d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[79]:  Item:  PlannedMessage { Sequence = 577, TemplateId = 946, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 6be3bc9b-b67f-44f5-bc28-19c11cf0ebd4, Sku = SKU-233, Quantity = 100001, CorrelationId = 868c4bb1-2dfb-40ca-a65c-9798de13a7c6 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[80]:  Item:  PlannedMessage { Sequence = 581, TemplateId = 278, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 15b780b8-4ebd-482a-b1d4-7fa9fad36772, Sku = SKU-850, Quantity = 100001, CorrelationId = 4d4649cc-1dea-48bf-a64b-7ce8afab3d4b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[81]:  Item:  PlannedMessage { Sequence = 583, TemplateId = 659, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 90942d33-e7bc-4e4b-a80c-0f7e88067ea1, Sku = SKU-983, Quantity = 100001, CorrelationId = efa054e2-7347-4797-9658-1c40caefc867 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[82]:  Item:  PlannedMessage { Sequence = 591, TemplateId = 847, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = e7e34971-4760-4a26-b22a-bf2922efe843, Sku = SKU-393, Quantity = 100001, CorrelationId = b25726b5-bbc6-4633-8a7f-b1db392452e3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[83]:  Item:  PlannedMessage { Sequence = 593, TemplateId = 239, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = e7e34971-4760-4a26-b22a-bf2922efe843, Sku = SKU-393, Quantity = 100001, CorrelationId = 8d6afba5-8278-4e0f-83b2-41b293724e32 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[84]:  Item:  PlannedMessage { Sequence = 597, TemplateId = 64, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = cd58820c-2c7a-4063-ae58-54b56f8ac623, Sku = SKU-623, Quantity = 100001, CorrelationId = faedeed3-1b9b-4516-a3c5-786f4ccdd39e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[85]:  Item:  PlannedMessage { Sequence = 603, TemplateId = 901, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f81c2a97-8e3d-4106-b114-9b5a78bf8ae4, Sku = SKU-331, Quantity = 100001, CorrelationId = 15732a9c-ed55-40d0-b1c6-61305304c278 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[86]:  Item:  PlannedMessage { Sequence = 607, TemplateId = 326, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 4fe8c9d4-a216-4ade-b58d-7006a4c799f4, Sku = SKU-99, Quantity = 100001, CorrelationId = e9beb83f-8730-4082-b47d-c6c662556de6 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[87]:  Item:  PlannedMessage { Sequence = 611, TemplateId = 669, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 011ce1c3-c529-4464-aa40-c5ca0ffcc56b, Sku = SKU-21, Quantity = 100001, CorrelationId = 8974ff25-e7bc-4abb-b7c4-3941b9b817f2 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[88]:  Item:  PlannedMessage { Sequence = 629, TemplateId = 338, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 95081297-4d01-4353-a846-2837cdb93d25, Sku = SKU-903, Quantity = 100001, CorrelationId = a6fcecb1-550c-4d60-a449-baf9eba6fbe0 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[89]:  Item:  PlannedMessage { Sequence = 633, TemplateId = 459, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 05dcd409-dd63-4cac-b585-ba1b04ec6c7b, Sku = SKU-15, Quantity = 100001, CorrelationId = 7e477882-b930-48f0-a35f-006c2a54509f } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[90]:  Item:  PlannedMessage { Sequence = 651, TemplateId = 364, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f052ca3e-89e2-4f3f-a218-364e9fe8824b, Sku = SKU-45, Quantity = 100001, CorrelationId = e1444fe3-b160-4d6b-846c-b13bd6e1f9c5 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[91]:  Item:  PlannedMessage { Sequence = 653, TemplateId = 399, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = eae13bfc-304e-48c6-add0-95e37a4c9b5b, Sku = SKU-315, Quantity = 100001, CorrelationId = ffefc445-9e31-4a9b-8924-8c467c60a360 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[92]:  Item:  PlannedMessage { Sequence = 659, TemplateId = 785, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = a798803b-9904-4df4-b030-b4643c89de81, Sku = SKU-493, Quantity = 100001, CorrelationId = 6bff260d-07e9-4328-a5cf-52c4721044cb } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[93]:  Item:  PlannedMessage { Sequence = 663, TemplateId = 802, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5ed6b678-5df3-41f7-9a64-2ed84c56e472, Sku = SKU-965, Quantity = 100001, CorrelationId = 5a08b992-ab4c-4f31-9aee-e897606e942b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[94]:  Item:  PlannedMessage { Sequence = 665, TemplateId = 697, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = bbc93aec-5c40-469d-a117-ae56fe288397, Sku = SKU-894, Quantity = 100001, CorrelationId = 1983572f-ec12-4e77-854b-24e6d13aae95 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[95]:  Item:  PlannedMessage { Sequence = 673, TemplateId = 130, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 73526ab7-a8e1-4f17-ad96-fc8d24a2c3be, Sku = SKU-958, Quantity = 100001, CorrelationId = b0f67c0e-3d83-4f71-95fd-4b189b29b8d3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[96]:  Item:  PlannedMessage { Sequence = 675, TemplateId = 436, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5f76a7b3-e288-43e0-9803-8779b530df47, Sku = SKU-1000, Quantity = 100001, CorrelationId = 4b4b5212-14f5-4e90-92a5-86a25e021551 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[97]:  Item:  PlannedMessage { Sequence = 681, TemplateId = 756, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = b2632df9-d31e-4d45-91eb-38c601882f6d, Sku = SKU-330, Quantity = 100001, CorrelationId = 33859873-905f-419c-b4b8-8d032864d70c } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[98]:  Item:  PlannedMessage { Sequence = 687, TemplateId = 654, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 43977914-0dac-49a4-93d9-3c28f7e258d5, Sku = SKU-725, Quantity = 100001, CorrelationId = 05df1fb9-148f-45a9-a3c5-5efae00878e7 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[99]:  Item:  PlannedMessage { Sequence = 691, TemplateId = 62, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 717fa3b0-0afe-406b-91a6-c9e8ead1cdf1, Sku = SKU-100, Quantity = 100001, CorrelationId = 50cea136-6fd3-4c89-8d92-fa7278850eab } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[100]: Item:  PlannedMessage { Sequence = 697, TemplateId = 758, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = f0c0b00c-c9be-4310-80fe-5f2dec6b7332, Sku = SKU-443, Quantity = 100001, CorrelationId = 735230d7-2902-4787-9a58-cdccba5a67d9 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[101]: Item:  PlannedMessage { Sequence = 707, TemplateId = 497, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = bf01fa46-0f2a-4a43-a069-2c2e3065ea4d, Sku = SKU-117, Quantity = 100001, CorrelationId = e2af9e6e-64c4-4675-af3a-862b1f7f0c4d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[102]: Item:  PlannedMessage { Sequence = 709, TemplateId = 947, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7ec64e24-55b3-4dc8-9236-c6b7f48c0be1, Sku = SKU-288, Quantity = 100001, CorrelationId = 503ac6db-6bf9-4001-bacd-26cddce981eb } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[103]: Item:  PlannedMessage { Sequence = 713, TemplateId = 230, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7630c672-2fcf-4b8f-8adc-8ff27072942c, Sku = SKU-156, Quantity = 100001, CorrelationId = f8a3f83e-9144-4c9b-9b1b-557e206711cc } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[104]: Item:  PlannedMessage { Sequence = 715, TemplateId = 452, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5e962b4f-1ea0-4ad4-be87-f53def11c69a, Sku = SKU-941, Quantity = 100001, CorrelationId = 0edd6537-268f-40ad-b27a-ff4234f972f3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[105]: Item:  PlannedMessage { Sequence = 725, TemplateId = 52, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 4145e9f9-d7b0-4fc3-87cc-38ca57f7d376, Sku = SKU-211, Quantity = 100001, CorrelationId = c2033cb8-2b4a-4091-9cc7-3851fcab0bb9 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[106]: Item:  PlannedMessage { Sequence = 727, TemplateId = 328, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ca05da7c-f8ee-419e-b9d1-743382a1254b, Sku = SKU-572, Quantity = 100001, CorrelationId = ae4d15c5-ca8a-41a5-8b88-058e55f405f9 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[107]: Item:  PlannedMessage { Sequence = 731, TemplateId = 981, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 373af4cd-820b-47f7-982d-8775359f7a0c, Sku = SKU-451, Quantity = 100001, CorrelationId = f962e0cb-b1a6-4722-bccf-c4d60e95b8f7 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[108]: Item:  PlannedMessage { Sequence = 735, TemplateId = 809, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 748f1816-b31e-4dd9-aee1-a04d1eb747d7, Sku = SKU-229, Quantity = 100001, CorrelationId = 22b8fbd6-c055-4bfd-b997-6626f0568f08 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[109]: Item:  PlannedMessage { Sequence = 739, TemplateId = 241, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 0c9cb66f-4871-40fd-87ea-49087b18c95e, Sku = SKU-223, Quantity = 100001, CorrelationId = 9784b641-757b-4eba-94c8-c88bc70e13cc } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[110]: Item:  PlannedMessage { Sequence = 741, TemplateId = 403, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 356967a0-7f11-4bdb-80c1-d5d2a5b588f6, Sku = SKU-69, Quantity = 100001, CorrelationId = 0358a50c-4cbf-48e7-a6b6-d15a1dbb13c0 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[111]: Item:  PlannedMessage { Sequence = 749, TemplateId = 968, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 17e1697b-75d2-429e-9715-d265a609564a, Sku = SKU-400, Quantity = 100001, CorrelationId = bce1cb87-f43d-4d25-8846-f46f7855ef3b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[112]: Item:  PlannedMessage { Sequence = 753, TemplateId = 879, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d67ad3ed-acc6-40bb-890e-da3119a14e57, Sku = SKU-357, Quantity = 100001, CorrelationId = 07cb5bef-f681-446d-ba78-9f29a893d2dc } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[113]: Item:  PlannedMessage { Sequence = 759, TemplateId = 772, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 41637ddf-508c-4994-847c-d1da1ad573c9, Sku = SKU-754, Quantity = 100001, CorrelationId = 55aa41dc-734a-4c49-b309-045675b7e4f1 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[114]: Item:  PlannedMessage { Sequence = 773, TemplateId = 984, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7e8603e7-4499-4005-a8f5-61dd2ded5798, Sku = SKU-944, Quantity = 100001, CorrelationId = dfaa4b24-f25e-4bf8-a4c0-8ea7c7d70e12 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[115]: Item:  PlannedMessage { Sequence = 775, TemplateId = 517, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = b8e0b4be-60f5-4acb-98f8-9e2dc72e8793, Sku = SKU-990, Quantity = 100001, CorrelationId = 5c1fbcac-95ea-428a-a0ff-85df65f14e3f } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[116]: Item:  PlannedMessage { Sequence = 787, TemplateId = 334, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 8f8f57a8-187e-48cc-ad84-8000ac686a83, Sku = SKU-511, Quantity = 100001, CorrelationId = 6f873305-0715-45bf-8206-d9a76a92ecf4 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[117]: Item:  PlannedMessage { Sequence = 789, TemplateId = 170, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = a2c38161-4c04-4b31-9478-1129a587bd8e, Sku = SKU-11, Quantity = 100001, CorrelationId = 28428025-809a-4166-a0b0-44b55b88349a } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[118]: Item:  PlannedMessage { Sequence = 797, TemplateId = 227, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 49b7ad1d-cb5d-4944-acb9-b3d5de250d83, Sku = SKU-870, Quantity = 100001, CorrelationId = bcecfec8-b9a9-4ce2-9ed5-b90ec717ca79 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[119]: Item:  PlannedMessage { Sequence = 801, TemplateId = 985, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 7e0d5de0-b233-4a97-9e5f-b4aa4a9d8057, Sku = SKU-347, Quantity = 100001, CorrelationId = 0709b488-3b57-4284-9346-a807d2d48e6b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[120]: Item:  PlannedMessage { Sequence = 805, TemplateId = 444, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 0dd2cd8f-0926-440b-8fcb-46a58f11749e, Sku = SKU-167, Quantity = 100001, CorrelationId = 78dff17f-cc0a-4fb6-89ef-8e6ea87325ad } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[121]: Item:  PlannedMessage { Sequence = 821, TemplateId = 465, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ed357454-4272-4d2b-99ff-5870cd3283cf, Sku = SKU-736, Quantity = 100001, CorrelationId = 4af9a60d-eb1c-467b-a0d9-a42189aaff80 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[122]: Item:  PlannedMessage { Sequence = 829, TemplateId = 628, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 52ff5e7d-ec37-45f7-8ba3-51567c40a326, Sku = SKU-409, Quantity = 100001, CorrelationId = 8558b9a5-1a0f-4dda-86c4-2f74404521e5 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[123]: Item:  PlannedMessage { Sequence = 833, TemplateId = 610, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 3a643190-3746-4ff4-88f8-795e1cae7979, Sku = SKU-929, Quantity = 100001, CorrelationId = bf428f81-3823-4843-87e8-e1d829404483 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[124]: Item:  PlannedMessage { Sequence = 835, TemplateId = 977, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = cba31023-3879-4271-91e6-09fbaa2c9266, Sku = SKU-900, Quantity = 100001, CorrelationId = 676e103e-51f3-4ecb-84d7-0a6ee7e72b1b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[125]: Item:  PlannedMessage { Sequence = 853, TemplateId = 209, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = df085d3b-c9aa-4d6e-a4d3-c8d091d194c9, Sku = SKU-920, Quantity = 100001, CorrelationId = e18f0de7-0279-4383-87f7-b93b269f1b89 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[126]: Item:  PlannedMessage { Sequence = 857, TemplateId = 41, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ad7a8de2-3874-416d-83a8-2bb747b3d36f, Sku = SKU-970, Quantity = 100001, CorrelationId = 9407c695-fa80-4b23-96cc-c262738b24f3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[127]: Item:  PlannedMessage { Sequence = 859, TemplateId = 599, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ad7a8de2-3874-416d-83a8-2bb747b3d36f, Sku = SKU-970, Quantity = 100001, CorrelationId = 4af5c2e3-a202-4998-bdb6-a9c47252ef98 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[128]: Item:  PlannedMessage { Sequence = 861, TemplateId = 253, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = cd0a87d9-2c84-4fdd-b58e-5f6607683a94, Sku = SKU-395, Quantity = 100001, CorrelationId = 0655e7f7-60d0-4571-8fac-0614ad17d6a1 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[129]: Item:  PlannedMessage { Sequence = 869, TemplateId = 924, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = ca2ca9f9-1b98-424e-94ce-f4cfba027d84, Sku = SKU-749, Quantity = 100001, CorrelationId = 103928d4-9a29-4470-8e74-89702ba443d0 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[130]: Item:  PlannedMessage { Sequence = 871, TemplateId = 173, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 827688ed-057a-4fe0-9c4d-fd336b482bae, Sku = SKU-360, Quantity = 100001, CorrelationId = f0a4ad5c-8773-4147-9348-2f9062503560 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[131]: Item:  PlannedMessage { Sequence = 873, TemplateId = 609, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 827688ed-057a-4fe0-9c4d-fd336b482bae, Sku = SKU-360, Quantity = 100001, CorrelationId = 2cd7a3b3-c4f7-49c9-84f1-38e292c99120 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[132]: Item:  PlannedMessage { Sequence = 875, TemplateId = 48, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 366281a5-3c2f-465f-8977-3f5a86e53310, Sku = SKU-969, Quantity = 100001, CorrelationId = 6a2ce618-0aab-482b-8287-656cb0585a1b } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[133]: Item:  PlannedMessage { Sequence = 889, TemplateId = 18, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = c140e665-c136-4da8-bbd0-f9b61c8f71b8, Sku = SKU-507, Quantity = 100001, CorrelationId = a1ded244-9f0e-46b4-ae32-11a9b98d1901 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[134]: Item:  PlannedMessage { Sequence = 901, TemplateId = 848, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 04016006-f808-4824-97c0-114f95e0c073, Sku = SKU-738, Quantity = 100001, CorrelationId = 0cf53ed0-c291-4c31-b8a6-f835afb7a218 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[135]: Item:  PlannedMessage { Sequence = 913, TemplateId = 138, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = b8eb5c33-47d4-4df1-a971-d722443a3440, Sku = SKU-612, Quantity = 100001, CorrelationId = 3bb23342-87ae-4875-9c81-c4b520a126f3 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[136]: Item:  PlannedMessage { Sequence = 923, TemplateId = 979, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 5716819a-5b5e-44b2-9ce4-c1d487095922, Sku = SKU-934, Quantity = 100001, CorrelationId = 42e75904-b349-4b89-b044-a9c2760ec9d6 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[137]: Item:  PlannedMessage { Sequence = 931, TemplateId = 498, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 97fe9044-2fb9-4d60-bf85-5f4d221b1373, Sku = SKU-751, Quantity = 100001, CorrelationId = c3306b54-d66a-499c-9671-5aad9faef3bd } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[138]: Item:  PlannedMessage { Sequence = 933, TemplateId = 70, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 97fe9044-2fb9-4d60-bf85-5f4d221b1373, Sku = SKU-751, Quantity = 100001, CorrelationId = a50487ba-3cfc-43e2-8b99-7caab8f63835 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[139]: Item:  PlannedMessage { Sequence = 941, TemplateId = 978, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 595a09af-580c-4bf7-bb26-dfaa51541402, Sku = SKU-318, Quantity = 100001, CorrelationId = 28517bcd-dab6-4b65-ac5b-143e7f3909be } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[140]: Item:  PlannedMessage { Sequence = 947, TemplateId = 667, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = a6bf8c35-3cde-4064-884c-c541049d4e85, Sku = SKU-421, Quantity = 100001, CorrelationId = 5be2dc9a-d7f6-4fb4-80e4-1604ca750b54 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[141]: Item:  PlannedMessage { Sequence = 961, TemplateId = 202, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 412192d8-288a-4d5b-beb4-153d7763a21d, Sku = SKU-649, Quantity = 100001, CorrelationId = dd9b1b68-872d-4b86-91a9-c75e82fb8135 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[142]: Item:  PlannedMessage { Sequence = 965, TemplateId = 564, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = db414cfc-c961-4a96-a8e3-da4c2b66b263, Sku = SKU-368, Quantity = 100001, CorrelationId = 7f8e7863-58db-4369-a26b-f0173705bd7a } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[143]: Item:  PlannedMessage { Sequence = 969, TemplateId = 262, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = bd7504ea-9bb1-4e6a-816c-309a43715045, Sku = SKU-275, Quantity = 100001, CorrelationId = 2fd6ca2f-805f-4c4f-8459-b1a1134cb0eb } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[144]: Item:  PlannedMessage { Sequence = 971, TemplateId = 123, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = bd7504ea-9bb1-4e6a-816c-309a43715045, Sku = SKU-275, Quantity = 100001, CorrelationId = 3d026065-474f-4c26-9b36-9b0177a2a06e } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[145]: Item:  PlannedMessage { Sequence = 981, TemplateId = 406, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = d9313c41-9f39-4e5b-afa7-91b49c672cee, Sku = SKU-412, Quantity = 100001, CorrelationId = e9dfa47c-e5b7-4c41-bdd5-069aae234be4 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[146]: Item:  PlannedMessage { Sequence = 985, TemplateId = 385, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 4e1ae4cb-f14b-484a-93fa-492381b560dc, Sku = SKU-153, Quantity = 100001, CorrelationId = c5ffece6-c8be-4ad2-9c66-46f4ad86612d } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+[147]: Item:  PlannedMessage { Sequence = 999, TemplateId = 147, Scenario = Conflict, Expected = ConflictRejected, Order = OrderRequest { Version = 1, OrderId = 50f37b3e-cc02-4fad-98a8-7adf4b86afac, Sku = SKU-832, Quantity = 100001, CorrelationId = 6f52fc39-3eb2-4dcc-bd0f-62bec2070c31 } }
+       Error: Assert.Null() Failure: Value is not null
+              Expected: null
+              Actual:   "quantity_out_of_range"
+  Analisi dello stack:
+     at Capstone.UnitTests.Unit5RegressionTests.Conflict_injection_at_maximum_quantity_remains_valid_business_input() in tests\Capstone.UnitTests\Unit5RegressionTests.cs:line 15
+   at System.Reflection.MethodBaseInvoker.InterpretedInvoke_Method(Object obj, IntPtr* args)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+File di risultati: artifacts\unit5-regression-before\gianlucabarsaglini_GIANLUCABAR7496_2026-09-29_23_04_37_net10.0.trx
+
+Non superato! - Non superati:     1. Superati:     0. Ignorati:     0. Totale:     1. Durata: 91 ms - Capstone.UnitTests.dll (net10.0)

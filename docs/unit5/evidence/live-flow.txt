@@ -1,0 +1,21 @@
+Submitted order 193e115b-f031-4015-bee6-4cdb09eff3a3: Pending
+{
+    "sourceId":  "demo",
+    "order":  {
+                  "version":  1,
+                  "orderId":  "193e115b-f031-4015-bee6-4cdb09eff3a3",
+                  "sku":  "DEMO-PALLET-01",
+                  "quantity":  5,
+                  "correlationId":  "051a296e-0c85-4410-a792-b219ec585d8f"
+              },
+    "status":  "Acknowledged",
+    "receipt":  {
+                    "sourceId":  "demo",
+                    "orderId":  "193e115b-f031-4015-bee6-4cdb09eff3a3",
+                    "receiptId":  "e9b07471-bcbc-43c2-993f-0e0c72d11f6a",
+                    "acceptedAt":  "2026-09-29T14:06:22.8527061+00:00"
+                }
+}
+Duplicate returned HTTP 200 and original receipt e9b07471-bcbc-43c2-993f-0e0c72d11f6a
+Changed quantity returned HTTP 409
+SQL assertion passed: exactly one accepted order and one receipt.
