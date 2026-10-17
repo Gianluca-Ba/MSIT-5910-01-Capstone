@@ -9,6 +9,8 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0" />
+    <!-- Override SqlClient's vulnerable transitive PKCS dependency. -->
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.21" />
   </ItemGroup>
 
 </Project>
