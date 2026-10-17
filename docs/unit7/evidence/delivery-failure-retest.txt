@@ -1,0 +1,7 @@
+Stopped the recorded WMS demo process to cause a real connection failure.
+PASS: order 6ce1eba7-89a4-403d-acaf-70a6b9333986 is RecoveryRequired with no claimed receipt.
+Stopped demo process 11064
+Wms ready at http://127.0.0.1:5081
+Erp ready at http://127.0.0.1:5080
+PASS: RecoveryRequired survives restart. Both services are healthy again.
+Automatic requeue is not implemented; the failed order remains available for inspection.

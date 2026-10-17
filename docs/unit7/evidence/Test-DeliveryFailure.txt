@@ -1,0 +1,6 @@
+WMS listener is not the recorded demo process
+In C:\Progetti\reliable-erp-wms\scripts\Test-DeliveryFailure.ps1:8 car:123
++ ... lTime().Ticks){throw 'WMS listener is not the recorded demo process'}
++                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (WMS listener is...ed demo process:String) [], RuntimeException
+    + FullyQualifiedErrorId : WMS listener is not the recorded demo process

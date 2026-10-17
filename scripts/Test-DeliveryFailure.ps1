@@ -2,7 +2,7 @@
 $secrets=Get-DemoSecrets
 $headers=@{'X-Api-Key'=(Unprotect $secrets.ErpKey)}
 $listener=Get-NetTCPConnection -LocalPort 5081 -State Listen -ErrorAction Stop | Select-Object -First 1
-$records=@(Get-Content "$repo/.local/processes.json" -Raw|ConvertFrom-Json)
+$records=Get-Content "$repo/.local/processes.json" -Raw|ConvertFrom-Json
 $record=$records|Where-Object Id -eq $listener.OwningProcess
 $process=Get-Process -Id $listener.OwningProcess
 if(-not $record -or $process.StartTime.ToUniversalTime().Ticks -ne ([datetime]$record.StartTime).ToUniversalTime().Ticks){throw 'WMS listener is not the recorded demo process'}
@@ -25,4 +25,4 @@ try{
 $restored=Invoke-RestMethod "http://127.0.0.1:5080/api/orders/$id" -Headers $headers
 if($restored.status -ne 'RecoveryRequired'){throw 'Failure state did not survive restart'}
 Write-Output 'PASS: RecoveryRequired survives restart. Both services are healthy again.'
-Write-Output 'Automatic requeue is intentionally deferred to Unit 5; the failed order remains available for inspection.'
+Write-Output 'Automatic requeue is not implemented; the failed order remains available for inspection.'

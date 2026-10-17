@@ -1,0 +1,12 @@
+﻿{
+    "StartedUtc":  "2026-10-11T04:05:03.1325843Z",
+    "TimeoutSeconds":  180,
+    "Trials":  4,
+    "Platform":  "Microsoft Windows NT 10.0.26200.0",
+    "WarmupOrders":  3,
+    "ProcessorArchitecture":  "ARM64",
+    "PollDelayMs":  100,
+    "FinishedUtc":  "2026-10-11T04:08:29.5225258Z",
+    "OrdersPerTrial":  50,
+    "Harness":  "PowerShell HttpClient with Stopwatch; SQL assertions after timed delivery window"
+}

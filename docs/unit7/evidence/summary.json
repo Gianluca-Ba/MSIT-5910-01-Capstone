@@ -1,0 +1,113 @@
+{
+  "valid": {
+    "n": 200,
+    "mean": 2.624637,
+    "median": 1.41205,
+    "p95": 7.4479,
+    "min": 0.8922,
+    "max": 39.3261
+  },
+  "duplicate": {
+    "n": 40,
+    "mean": 1.5657675,
+    "median": 1.11285,
+    "p95": 3.0129,
+    "min": 0.8195,
+    "max": 7.2941
+  },
+  "conflict": {
+    "n": 40,
+    "mean": 1.3849775,
+    "median": 0.9474,
+    "p95": 2.3577,
+    "min": 0.653,
+    "max": 8.6981
+  },
+  "invalid": {
+    "n": 40,
+    "mean": 0.5612075,
+    "median": 0.4579,
+    "p95": 1.0381,
+    "min": 0.2737,
+    "max": 2.4927
+  },
+  "end_to_end": {
+    "n": 200,
+    "mean": 25565.6964285,
+    "median": 25536.918850000002,
+    "p95": 48271.1632,
+    "min": 778.6576,
+    "max": 50488.2177
+  },
+  "trials": [
+    {
+      "Trial": "1",
+      "Submitted": "50",
+      "Acknowledged": "50",
+      "ObservationSeconds": "50,5094404",
+      "AcknowledgedPerSecond": "0,989913956758072"
+    },
+    {
+      "Trial": "2",
+      "Submitted": "50",
+      "Acknowledged": "50",
+      "ObservationSeconds": "50,5717946",
+      "AcknowledgedPerSecond": "0,988693408954089"
+    },
+    {
+      "Trial": "3",
+      "Submitted": "50",
+      "Acknowledged": "50",
+      "ObservationSeconds": "50,3683237",
+      "AcknowledgedPerSecond": "0,992687394121079"
+    },
+    {
+      "Trial": "4",
+      "Submitted": "50",
+      "Acknowledged": "50",
+      "ObservationSeconds": "50,5663923",
+      "AcknowledgedPerSecond": "0,988799036786336"
+    }
+  ],
+  "custom": [
+    {
+      "Seed": "6001",
+      "BatchId": "dcc5caa0-55b6-4bf4-a32f-be781a59bb3d",
+      "Definition": "U6_00370439d9424cde8e05e98cf582a8b7",
+      "Http": "200",
+      "HttpMs": "40,941",
+      "Count": "1000",
+      "Valid": "700",
+      "Invalid": "300",
+      "Matched": "1000",
+      "MessagesPerSecond": "24425,3926381867"
+    },
+    {
+      "Seed": "6002",
+      "BatchId": "a3d9d302-8c43-45fe-b9c8-364fd9f9a354",
+      "Definition": "U6_00370439d9424cde8e05e98cf582a8b7",
+      "Http": "200",
+      "HttpMs": "91,7443",
+      "Count": "1000",
+      "Valid": "700",
+      "Invalid": "300",
+      "Matched": "1000",
+      "MessagesPerSecond": "10899,8597188054"
+    },
+    {
+      "Seed": "6003",
+      "BatchId": "acd629e4-2725-485a-af38-5bb3f18b2d0d",
+      "Definition": "U6_00370439d9424cde8e05e98cf582a8b7",
+      "Http": "200",
+      "HttpMs": "52,2277",
+      "Count": "1000",
+      "Valid": "700",
+      "Invalid": "300",
+      "Matched": "1000",
+      "MessagesPerSecond": "19146,9277797031"
+    }
+  ],
+  "matched": 320,
+  "total": 320,
+  "unobserved_valid": 0
+}

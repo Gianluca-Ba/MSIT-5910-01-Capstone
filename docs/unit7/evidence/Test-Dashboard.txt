@@ -1,0 +1,21 @@
+PASS: Dashboard loads without exposing business data
+PASS: Dashboard sends framing and cache protections
+PASS: HTML contains no service API keys
+PASS: dashboard.css is served
+PASS: dashboard.js is served
+PASS: Non-dashboard paths remain authenticated
+PASS: WMS does not expose dashboard paths
+PASS: Evidence requires authentication
+PASS: Receiver checks require authentication
+PASS: Unknown evidence returns 404
+PASS: Dashboard order accepted by ERP
+PASS: Dashboard order reaches Acknowledged
+PASS: Gateway duplicate preserves original WMS receipt
+PASS: Gateway preserves WMS conflict response
+PASS: Gateway preserves backend validation
+PASS: SQL-backed evidence confirms unchanged order and one receipt
+PASS: ERP and WMS receipts match
+PASS: WMS evidence requires authentication
+PASS: WMS evidence is source-isolated
+PASS: Unmapped ERP source cannot borrow demo WMS identity
+20 dashboard integration assertions passed. Test records retained.

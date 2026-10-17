@@ -1,0 +1,4 @@
+Trial 1 completed: 30/30 acknowledged in 30.49 s
+Trial 2 completed: 30/30 acknowledged in 30.23 s
+Trial 3 completed: 30/30 acknowledged in 30.43 s
+Measured 180 order scenarios; mismatches: 0. Custom validation batches: 3.

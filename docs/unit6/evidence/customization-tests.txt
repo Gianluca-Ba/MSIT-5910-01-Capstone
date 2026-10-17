@@ -1,0 +1,16 @@
+PASS: Definitions require authentication
+PASS: Save first immutable version
+PASS: Editing creates version two
+PASS: Original version keeps its original range
+PASS: New version applies changed range
+PASS: Rejection identifies field
+PASS: Generate and record 1000 custom messages
+PASS: Exactly 300 controlled validation rejections
+PASS: Actual outcomes match expected outcomes
+PASS: Batch content and results read back from SQL
+PASS: Other source cannot read batch
+PASS: Other source cannot use definition
+PASS: Oversized batch is rejected
+PASS: Executable field type is rejected
+PASS: Batch appears in source history
+15 customization checks passed.

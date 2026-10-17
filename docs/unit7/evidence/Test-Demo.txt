@@ -1,0 +1,26 @@
+PASS: Unauthenticated WMS request rejected
+PASS: Unauthenticated request has no effect
+PASS: Invalid quantity rejected at ERP
+PASS: Invalid order not persisted
+PASS: Payload cannot supply authenticated source
+PASS: Oversized body rejected
+PASS: Concurrent acceptance creates exactly one order
+PASS: Nine concurrent duplicates return HTTP 200
+PASS: Concurrent duplicates share original receipt
+PASS: SQL confirms one WMS business effect
+PASS: SQL confirms one WMS receipt
+PASS: Changed tracing metadata remains a duplicate
+PASS: Changed immutable content conflicts
+PASS: Separate authenticated source has separate identity
+PASS: SQL confirms isolated source identity
+PASS: ERP returns durable submission acceptance
+PASS: Source order persisted
+PASS: Outgoing intention persisted
+PASS: Cross-source status lookup denied
+PASS: Unauthenticated status lookup denied
+PASS: Worker delivers and stores acknowledgement
+PASS: Delivery attempt recorded
+PASS: ERP workflow reaches real WMS store
+PASS: ERP repeated submission is idempotent
+PASS: ERP duplicate creates no second outbox message
+Passed 25 HTTP and SQL assertions. These are integration checks, separate from unit tests.

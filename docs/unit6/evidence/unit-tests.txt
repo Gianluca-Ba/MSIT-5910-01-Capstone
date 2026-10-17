@@ -1,0 +1,5 @@
+Esecuzione dei test per C:\Progetti\reliable-erp-wms\tests\Capstone.UnitTests\bin\Release\net10.0\Capstone.UnitTests.dll (.NETCoreApp,Version=v10.0)
+Un totale di 1 file di test corrisponde al criterio specificato.
+File di risultati: C:\Progetti\reliable-erp-wms\artifacts\unit6-final\gianlucabarsaglini_GIANLUCABAR7496_2026-10-04_18_55_51_net10.0.trx
+
+Superato!     - Non superati:     0. Superati:    54. Ignorati:     0. Totale:    54. Durata: 54 ms - Capstone.UnitTests.dll (net10.0)

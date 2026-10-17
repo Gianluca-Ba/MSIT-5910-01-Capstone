@@ -1,0 +1,2 @@
+PASS: arm is inert; parallel run rejected; 7 acknowledgements + 3 expected rejections; audit evidence present; disarm and active Stop preserve sent work and cancel queued messages.
+Completed evidence run: 42d17e6a-c05a-4bb1-a12c-2636eebe5492
